@@ -128,7 +128,10 @@ ${context}`;
 
 Görev: Yukarıdaki GERÇEK varlık verisine dayanarak kapsamlı analiz (trend, destek/direnç, momentum, senaryolar), net strateji ve aksiyon adımları ver. Sanki bir insan finansal danışmanla konuşuyormuş gibi doğal ve samimi ol. Kullanıcı metni: ${userText}`;
 
-      const apiKey = ((import.meta as any).env?.VITE_GEMINI_API_KEY || 'AIzaSyCEbE1jf_UPGK8AgCB1--oCZTu3ndGHaoM').trim();
+      // Google Gemini API - yedek key desteği
+      const primaryKey = ((import.meta as any).env?.VITE_GEMINI_API_KEY || 'AIzaSyCEbE1jf_UPGK8AgCB1--oCZTu3ndGHaoM').trim();
+      const backupKey = 'AIzaSyCEwENQchtwME_fXEn_pdQe59RpUq8Iei8';
+      let apiKey = primaryKey;
       
       const res = await fetch(`https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash-exp:generateContent?key=${apiKey}`, {
         method: 'POST',
@@ -151,6 +154,37 @@ Görev: Yukarıdaki GERÇEK varlık verisine dayanarak kapsamlı analiz (trend, 
 
       if (!res.ok) {
         const errorData = await res.json().catch(() => ({}));
+        // Yedek key'i dene (sadece bir kez)
+        if ((res.status === 401 || res.status === 403) && apiKey === primaryKey) {
+          console.log('[AI] Ana API key başarısız, yedek key deneniyor...');
+          apiKey = backupKey;
+          const retryRes = await fetch(`https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash-exp:generateContent?key=${apiKey}`, {
+            method: 'POST',
+            headers: {
+              'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({
+              contents: [
+                {
+                  role: 'user',
+                  parts: [{ text: `SYSTEM: ${systemPrompt}\n\n${userInstruction}` }]
+                }
+              ],
+              generationConfig: {
+                temperature: 0.7,
+                maxOutputTokens: 2000
+              }
+            })
+          });
+          if (!retryRes.ok) {
+            const retryErrorData = await retryRes.json().catch(() => ({}));
+            throw new Error(`Gemini API request failed: ${retryErrorData.error?.message || retryRes.statusText}`);
+          }
+          const retryData = await retryRes.json();
+          const raw = retryData?.candidates?.[0]?.content?.parts?.[0]?.text || 'Yanıt alınamadı.';
+          const text = typeof raw === 'string' ? raw : JSON.stringify(raw);
+          return text.replace(/\*\*(.*?)\*\*/g, '<b>$1</b>');
+        }
         throw new Error(`Gemini API request failed: ${errorData.error?.message || res.statusText}`);
       }
       

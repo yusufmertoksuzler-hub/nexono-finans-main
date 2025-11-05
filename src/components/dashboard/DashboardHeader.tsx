@@ -1,5 +1,5 @@
 import React, { useState, useMemo, useEffect } from 'react';
-import { TrendingUp, Search, Settings, User, Plus, Sparkles, LogOut, Heart, ArrowLeft } from 'lucide-react';
+import { TrendingUp, Search, Settings, User, Plus, Sparkles, LogOut, ArrowLeft, Heart } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { useAuth } from '@/context/AuthContext';
@@ -132,6 +132,7 @@ const DashboardHeader = () => {
 
           {/* Actions */}
           <div className="flex items-center space-x-2">
+            {/* Favorites Button */}
             <Button variant="ghost" size="icon" onClick={() => navigate('/favorites')} className="hidden md:flex">
               <Heart className="h-4 w-4" />
             </Button>
@@ -185,9 +186,6 @@ const DashboardHeader = () => {
                 </Button>
                 <Button variant="ghost" size="icon" onClick={() => navigate('/add-asset')} className="sm:hidden">
                   <Plus className="h-4 w-4" />
-                </Button>
-                <Button variant="ghost" size="icon" onClick={() => navigate('/favorites')} className="sm:inline-flex">
-                  <Heart className="h-4 w-4" />
                 </Button>
                 <Button variant="outline" size="icon" onClick={logout} className="sm:hidden">
                   <LogOut className="h-4 w-4" />

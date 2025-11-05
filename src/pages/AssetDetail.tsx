@@ -66,6 +66,7 @@ const AssetDetail = () => {
   const [isDataDelayed, setIsDataDelayed] = useState<boolean>(false);
   const [showTRYPrice, setShowTRYPrice] = useState<boolean>(true); // TRY paritesi göster
   const [cryptoTRY, setCryptoTRY] = useState<any>(null);
+  const [usdTryRate, setUsdTryRate] = useState<number>(32.5); // USD/TRY kuru
   const [yahooChartData, setYahooChartData] = useState<Array<{timestamp: number, price: number}>>([]);
   const [chartLoading, setChartLoading] = useState(false);
 
@@ -252,23 +253,53 @@ const AssetDetail = () => {
   const currentPrice = asset ? getPrice(asset.symbol) : null;
   
   // Stock için öncelik: asset.price (JSON'dan) > tvPrice (JSON'dan gelen, fallback) > currentPrice
-  // Crypto için: TRY paritesi > USD fiyatı
-  const displayPrice = asset?.type === 'crypto' && cryptoTRY && showTRYPrice 
-    ? cryptoTRY.current_price 
-    : (asset?.type === 'crypto' && cryptoTRY && !showTRYPrice
-      ? (asset?.price || tvPrice || currentPrice?.price || 0)
+  // Crypto için: TRY seçiliyse cryptoTRY.current_price (varsa), yoksa asset.price * usdTryRate, USD seçiliyse asset.price (USD fiyatı - değişmez)
+  const displayPrice = asset?.type === 'crypto' && showTRYPrice 
+    ? (cryptoTRY?.current_price || (asset?.price ? asset.price * usdTryRate : 0))
+    : (asset?.type === 'crypto' && !showTRYPrice
+      ? (asset?.price || tvPrice || currentPrice?.price || 0) // USD fiyatı - kur ile güncellenmez
       : (asset?.type === 'stock'
         ? (asset?.price || tvPrice || currentPrice?.price || 0) // Stock için asset.price öncelikli (JSON'dan)
         : (tvPrice || currentPrice?.price || asset?.price || 0)));
+
+  // Crypto için TRY seçiliyse high24h, low24h, marketCap, volume24h değerlerini TRY'den al veya kurla hesapla
+  const displayHigh24h = asset?.type === 'crypto' && showTRYPrice 
+    ? (cryptoTRY?.high_24h || (asset?.high24h ? asset.high24h * usdTryRate : null))
+    : asset?.high24h;
   
-  // Stock için JSON'dan gelen değişim verilerini kullan
+  const displayLow24h = asset?.type === 'crypto' && showTRYPrice 
+    ? (cryptoTRY?.low_24h || (asset?.low24h ? asset.low24h * usdTryRate : null))
+    : asset?.low24h;
+  
+  const displayMarketCap = asset?.type === 'crypto' && showTRYPrice 
+    ? (cryptoTRY?.market_cap || (asset?.marketCap ? asset.marketCap * usdTryRate : null))
+    : asset?.marketCap;
+  
+  const displayVolume24h = asset?.type === 'crypto' && showTRYPrice 
+    ? (cryptoTRY?.total_volume || (asset?.volume24h ? asset.volume24h * usdTryRate : null))
+    : asset?.volume24h;
+  
+  // Stock için JSON'dan gelen değişim verilerini kullan (öncelik: asset > fallback)
   const change24h = asset?.type === 'stock'
-    ? (asset?.change24h ?? (asset?.price && asset?.changePercent24h ? asset.price * (asset.changePercent24h / 100) : null) ?? 0)
+    ? (asset?.change24h !== null && asset?.change24h !== undefined 
+        ? asset.change24h 
+        : (asset?.price && asset?.changePercent24h !== null && asset?.changePercent24h !== undefined
+          ? asset.price * (asset.changePercent24h / 100)
+          : 0))
     : (currentPrice?.change24h || asset?.change24h || 0);
   
   const changePercent24h = asset?.type === 'stock'
-    ? (asset?.changePercent24h ?? tvChangePct ?? currentPrice?.changePercent24h ?? 0)
-    : ((tvChangePct ?? currentPrice?.changePercent24h) || asset?.changePercent24h || 0);
+    ? (asset?.changePercent24h !== null && asset?.changePercent24h !== undefined
+        ? asset.changePercent24h
+        : (tvChangePct !== null && tvChangePct !== undefined
+          ? tvChangePct
+          : (currentPrice?.changePercent24h !== null && currentPrice?.changePercent24h !== undefined
+            ? currentPrice.changePercent24h
+            : 0)))
+    : ((tvChangePct !== null && tvChangePct !== undefined ? tvChangePct : null) 
+        ?? (currentPrice?.changePercent24h !== null && currentPrice?.changePercent24h !== undefined ? currentPrice.changePercent24h : null)
+        ?? (asset?.changePercent24h !== null && asset?.changePercent24h !== undefined ? asset.changePercent24h : null)
+        ?? 0);
 
   // Gerçek fiyat verilerine dayalı grafik verisi oluştur (random değil, deterministik)
   const chartData = useMemo(() => {
@@ -361,6 +392,85 @@ const AssetDetail = () => {
     return data;
   }, [asset, displayPrice, change24h, changePercent24h, type, cryptoTRY, tvPrice, showTRYPrice, yahooChartData, asset?.price]);
 
+  // Timeframe'e göre değişim hesapla (1D, 1W, 1M, 3M) - chartData'dan sonra hesaplanmalı
+  const timeframeChange = useMemo(() => {
+    // 1D için özel: 24 saatlik değişim verilerini kullan (JSON'dan)
+    if (selectedChartTimeframe === '1D') {
+      return { change: change24h, changePercent: changePercent24h };
+    }
+    
+    const chartDataForCalc = type === 'stock' && yahooChartData.length > 0 ? yahooChartData : chartData;
+    if (!chartDataForCalc || chartDataForCalc.length === 0) {
+      return { change: change24h, changePercent: changePercent24h };
+    }
+    
+    // Verileri timestamp'e göre sırala
+    const sorted = [...chartDataForCalc]
+      .filter(d => d && d.timestamp && d.price && !isNaN(d.timestamp) && !isNaN(d.price) && d.price > 0)
+      .sort((a, b) => a.timestamp - b.timestamp);
+    
+    if (sorted.length < 2) {
+      return { change: change24h, changePercent: changePercent24h };
+    }
+    
+    // En son timestamp'i al (grafik verisinin en yeni zamanı)
+    const lastTimestamp = sorted[sorted.length - 1].timestamp;
+    let filteredData: typeof sorted = [];
+    
+    // Timeframe'e göre filtrele - son timestamp'ten geriye doğru
+    switch (selectedChartTimeframe) {
+      case '1W':
+        const oneWeekAgo = lastTimestamp - (7 * 24 * 60 * 60 * 1000);
+        filteredData = sorted.filter(d => d.timestamp >= oneWeekAgo);
+        break;
+      case '1M':
+        const oneMonthAgo = lastTimestamp - (30 * 24 * 60 * 60 * 1000);
+        filteredData = sorted.filter(d => d.timestamp >= oneMonthAgo);
+        break;
+      case '3M':
+        const threeMonthsAgo = lastTimestamp - (90 * 24 * 60 * 60 * 1000);
+        filteredData = sorted.filter(d => d.timestamp >= threeMonthsAgo);
+        break;
+      default:
+        filteredData = sorted;
+    }
+    
+    if (filteredData.length < 2) {
+      return { change: change24h, changePercent: changePercent24h };
+    }
+    
+    // İlk ve son fiyatı al (zaman sırasına göre - ilk en eski, son en yeni)
+    const firstPrice = filteredData[0].price;
+    const lastPrice = filteredData[filteredData.length - 1].price;
+    
+    if (!firstPrice || firstPrice <= 0 || !lastPrice || lastPrice <= 0) {
+      return { change: change24h, changePercent: changePercent24h };
+    }
+    
+    // Değişim hesapla
+    const change = lastPrice - firstPrice;
+    const changePercent = firstPrice > 0 ? (change / firstPrice) * 100 : 0;
+    
+    // Crypto için TRY seçiliyse, mutlak değişimi TRY'ye çevir
+    if (type === 'crypto' && showTRYPrice) {
+      // Yüzde değişim aynı kalır (USD ve TRY için aynı yüzde)
+      // Ama mutlak değişim TRY cinsinden olmalı
+      // cryptoTRY varsa onu kullan, yoksa kurla hesapla
+      if (cryptoTRY && cryptoTRY.current_price) {
+        const tryCurrentPrice = cryptoTRY.current_price;
+        const tryChange = tryCurrentPrice * (changePercent / 100);
+        return { change: tryChange, changePercent };
+      } else if (asset?.price && usdTryRate) {
+        // cryptoTRY yoksa, USD değişim yüzdesini kullanarak TRY değişim miktarını hesapla
+        const tryCurrentPrice = asset.price * usdTryRate;
+        const tryChange = tryCurrentPrice * (changePercent / 100);
+        return { change: tryChange, changePercent };
+      }
+    }
+    
+    return { change, changePercent };
+  }, [chartData, yahooChartData, selectedChartTimeframe, type, change24h, changePercent24h, showTRYPrice, cryptoTRY, asset?.price, usdTryRate]);
+
   const loadAssetData = async () => {
     if (!type || !symbol) {
       setLoading(false);
@@ -380,8 +490,17 @@ const AssetDetail = () => {
         throw new Error('Geçersiz varlık tipi');
       }
     } catch (err: any) {
-      console.error('Varlık verisi yüklenirken hata:', err);
-      setError(err?.message || 'Varlık bulunamadı');
+      console.error('[AssetDetail] Varlık verisi yüklenirken hata:', err);
+      // Daha açıklayıcı hata mesajı
+      let errorMessage = 'Varlık bulunamadı';
+      if (err?.message) {
+        if (err.message.includes('JSON') || err.message.includes('parse') || err.message.includes('Unexpected token')) {
+          errorMessage = 'Veri yüklenirken bir hata oluştu. Backend servisinin çalıştığından emin olun ve sayfayı yenileyin.';
+        } else {
+          errorMessage = err.message;
+        }
+      }
+      setError(errorMessage);
     } finally {
       setLoading(false);
     }
@@ -389,68 +508,136 @@ const AssetDetail = () => {
 
   const loadCryptoData = async () => {
     try {
-      const [usdRes, tryRes] = await Promise.all([
+      const [usdRes, tryRes, rateRes] = await Promise.all([
         fetch('/coins.json', { cache: 'no-store' }),
-        fetch('/coins_try.json', { cache: 'no-store' })
+        fetch('/coins_try.json', { cache: 'no-store' }),
+        fetch('/usd-try-rate.json', { cache: 'no-store' })
       ]);
-      const baseJson = usdRes.ok ? await usdRes.json() : { data: [] };
-      const tryJson = tryRes.ok ? await tryRes.json() : { data: [] };
-      const data = baseJson;
       
-      if (data?.data && Array.isArray(data.data)) {
-        // Önce tam eşleşme ara
-        let crypto = data.data.find((c: any) => 
-          c.symbol?.toLowerCase() === symbol?.toLowerCase()
-        );
-        
-        // Eğer bulunamazsa, id ile ara
-        if (!crypto) {
-          crypto = data.data.find((c: any) => 
-            c.id?.toLowerCase() === symbol?.toLowerCase()
-          );
-        }
-        
-        // Hala bulunamazsa, name ile ara
-        if (!crypto) {
-          crypto = data.data.find((c: any) => 
-            c.name?.toLowerCase().includes(symbol?.toLowerCase())
-          );
-        }
-        
-        if (crypto) {
-          // TRY paritesini eşle
-          let cryptoTRY = null as any;
-          if (Array.isArray(tryJson.data)) {
-            cryptoTRY = tryJson.data.find((c: any) =>
-              c.symbol?.toLowerCase() === symbol?.toLowerCase() ||
-              c.id?.toLowerCase() === crypto.id?.toLowerCase()
-            );
+      // JSON parse hatalarını yakala
+      let baseJson = { data: [] };
+      if (usdRes.ok) {
+        try {
+          const contentType = usdRes.headers.get('content-type');
+          if (contentType && contentType.includes('application/json')) {
+            baseJson = await usdRes.json();
+          } else {
+            console.warn('[Crypto] coins.json JSON değil, HTML döndü:', usdRes.status);
           }
-          setCryptoTRY(cryptoTRY);
-          // Varsayılan olarak TRY göster (eğer varsa)
-          setAsset({
-            symbol: crypto.symbol?.toUpperCase() || symbol?.toUpperCase() || '',
-            name: crypto.name || symbol?.toUpperCase() || '',
-            type: 'crypto',
-            price: cryptoTRY?.current_price ?? crypto.current_price,
-            image: crypto.image || '',
-            marketCap: cryptoTRY?.market_cap ?? crypto.market_cap,
-            volume24h: cryptoTRY?.total_volume ?? crypto.total_volume,
-            change24h: cryptoTRY?.price_change_24h ?? crypto.price_change_24h,
-            changePercent24h: cryptoTRY?.price_change_percentage_24h ?? crypto.price_change_percentage_24h,
-            high24h: cryptoTRY?.high_24h ?? crypto.high_24h,
-            low24h: cryptoTRY?.low_24h ?? crypto.low_24h,
-            supply: crypto.total_supply
-          });
-        } else {
-          throw new Error(`Kripto para bulunamadı: ${symbol}`);
+        } catch (parseErr) {
+          console.error('[Crypto] coins.json parse hatası:', parseErr);
         }
       } else {
-        throw new Error('Kripto para verileri yüklenemedi');
+        console.warn(`[Crypto] coins.json yüklenemedi: ${usdRes.status} ${usdRes.statusText}`);
       }
-    } catch (err) {
-      console.error('Kripto verisi yüklenirken hata:', err);
-      throw err;
+      
+      let tryJson = { data: [] };
+      if (tryRes.ok) {
+        try {
+          const contentType = tryRes.headers.get('content-type');
+          if (contentType && contentType.includes('application/json')) {
+            tryJson = await tryRes.json();
+          } else {
+            console.warn('[Crypto] coins_try.json JSON değil, HTML döndü:', tryRes.status);
+          }
+        } catch (parseErr) {
+          console.error('[Crypto] coins_try.json parse hatası:', parseErr);
+        }
+      } else {
+        console.warn(`[Crypto] coins_try.json yüklenemedi: ${tryRes.status} ${tryRes.statusText}`);
+      }
+      
+      let rateJson = { rate: 32.5 };
+      if (rateRes.ok) {
+        try {
+          const contentType = rateRes.headers.get('content-type');
+          if (contentType && contentType.includes('application/json')) {
+            rateJson = await rateRes.json();
+          } else {
+            console.warn('[Crypto] usd-try-rate.json JSON değil, varsayılan kur kullanılıyor');
+          }
+        } catch (parseErr) {
+          console.error('[Crypto] usd-try-rate.json parse hatası:', parseErr);
+        }
+      } else {
+        console.warn(`[Crypto] usd-try-rate.json yüklenemedi: ${rateRes.status}, varsayılan kur kullanılıyor`);
+      }
+      
+      // USD/TRY kurunu yükle
+      if (rateJson && rateJson.rate) {
+        setUsdTryRate(rateJson.rate);
+      }
+      
+      const data = baseJson;
+      
+      // Veri kontrolü
+      if (!data || typeof data !== 'object') {
+        throw new Error('Kripto para verileri geçersiz format. Lütfen backend servisinin çalıştığından emin olun.');
+      }
+      
+      if (!data.data || !Array.isArray(data.data)) {
+        console.warn('[Crypto] coins.json data.data geçersiz veya boş:', data);
+        throw new Error('Kripto para verileri yüklenemedi. Lütfen backend servisinin çalıştığından emin olun.');
+      }
+      
+      if (data.data.length === 0) {
+        console.warn('[Crypto] coins.json boş');
+        throw new Error('Kripto para verileri henüz yüklenmedi. Lütfen birkaç saniye bekleyip sayfayı yenileyin.');
+      }
+      
+      // Önce tam eşleşme ara
+      let crypto = data.data.find((c: any) => 
+        c && c.symbol && c.symbol.toLowerCase() === symbol?.toLowerCase()
+      );
+      
+      // Eğer bulunamazsa, id ile ara
+      if (!crypto) {
+        crypto = data.data.find((c: any) => 
+          c && c.id && c.id.toLowerCase() === symbol?.toLowerCase()
+        );
+      }
+      
+      // Hala bulunamazsa, name ile ara
+      if (!crypto) {
+        crypto = data.data.find((c: any) => 
+          c && c.name && c.name.toLowerCase().includes(symbol?.toLowerCase())
+        );
+      }
+      
+      if (crypto) {
+        // TRY paritesini eşle
+        let cryptoTRY = null as any;
+        if (Array.isArray(tryJson.data)) {
+          cryptoTRY = tryJson.data.find((c: any) =>
+            c && c.symbol && (c.symbol.toLowerCase() === symbol?.toLowerCase() ||
+            (c.id && c.id.toLowerCase() === crypto.id?.toLowerCase()))
+          );
+        }
+        setCryptoTRY(cryptoTRY);
+        // asset.price her zaman USD fiyatı olacak (crypto.current_price)
+        // TRY fiyatı cryptoTRY.current_price'da saklanıyor ve showTRYPrice ile gösterilir
+        setAsset({
+          symbol: crypto.symbol?.toUpperCase() || symbol?.toUpperCase() || '',
+          name: crypto.name || symbol?.toUpperCase() || '',
+          type: 'crypto',
+          price: crypto.current_price, // USD fiyatı - sabit kalır, kur ile güncellenmez
+          image: crypto.image || '',
+          marketCap: crypto.market_cap, // USD market cap
+          volume24h: crypto.total_volume, // USD volume
+          change24h: crypto.price_change_24h, // USD değişim
+          changePercent24h: crypto.price_change_percentage_24h, // Yüzde değişim (USD ve TRY için aynı)
+          high24h: crypto.high_24h, // USD
+          low24h: crypto.low_24h, // USD
+          supply: crypto.total_supply
+        });
+      } else {
+        throw new Error(`Kripto para bulunamadı: ${symbol}. Lütfen sembolün doğru olduğundan emin olun.`);
+      }
+    } catch (err: any) {
+      console.error('[Crypto] Kripto verisi yüklenirken hata:', err);
+      // Daha açıklayıcı hata mesajı
+      const errorMessage = err?.message || 'Kripto para verisi yüklenirken bir hata oluştu';
+      throw new Error(errorMessage);
     }
   };
 
@@ -479,8 +666,20 @@ const AssetDetail = () => {
             : ((stock.tvPrice !== null && stock.tvPrice !== undefined && stock.tvPrice > 0) 
               ? stock.tvPrice 
               : null);
-          const finalChange24h = stock.degisim || (stock.fiyat && stock.degisimYuzde ? stock.fiyat * (stock.degisimYuzde / 100) : null) || null;
-          const finalChangePercent24h = stock.degisimYuzde || stock.tvChangePercent24h || null;
+          // Öncelik: degisimYuzde (Yahoo) > tvChangePercent24h (TradingView) > hesaplanan
+          const finalChangePercent24h = (stock.degisimYuzde !== null && stock.degisimYuzde !== undefined) 
+            ? stock.degisimYuzde 
+            : ((stock.tvChangePercent24h !== null && stock.tvChangePercent24h !== undefined)
+              ? stock.tvChangePercent24h
+              : ((stock.fiyat && stock.oncekiKapanis && stock.oncekiKapanis > 0)
+                ? ((stock.fiyat - stock.oncekiKapanis) / stock.oncekiKapanis) * 100
+                : null));
+          // Öncelik: degisim (Yahoo) > hesaplanan (fiyat * yüzde) > tvData'dan hesaplanan
+          const finalChange24h = (stock.degisim !== null && stock.degisim !== undefined && stock.degisim !== 0)
+            ? stock.degisim
+            : ((finalPrice && finalChangePercent24h !== null && finalChangePercent24h !== undefined)
+              ? finalPrice * (finalChangePercent24h / 100)
+              : null);
           const finalMarketCap = stock.piyasaDegeri || null; // JSON'dan gelen piyasa değeri
           const finalVolume = stock.hacim || stock.tvVolume || null;
           const finalHigh = stock.yuksek || stock.tvHigh24h || null;
@@ -879,10 +1078,10 @@ const AssetDetail = () => {
                   <div className="text-xl sm:text-3xl md:text-4xl font-bold break-words">
                     {loading ? (
                       <span className="text-muted-foreground">Yükleniyor...</span>
-                    ) : asset && (asset.price !== null && asset.price !== undefined && asset.price > 0) ? (
-                      formatPrice(asset.price, asset.type, showTRYPrice)
                     ) : (displayPrice && displayPrice > 0) ? (
                       formatPrice(displayPrice, asset.type, showTRYPrice)
+                    ) : asset && (asset.price !== null && asset.price !== undefined && asset.price > 0) ? (
+                      formatPrice(asset.price, asset.type, showTRYPrice)
                     ) : (
                       <span className="text-muted-foreground">Veri yok</span>
                     )}
@@ -896,22 +1095,34 @@ const AssetDetail = () => {
                 </div>
                 <div className="text-center">
                   <div className={`text-xl sm:text-2xl font-bold flex items-center justify-center space-x-1 ${
-                    ((asset?.change24h ?? change24h) ?? 0) >= 0 ? 'text-green-500' : 'text-red-500'
+                    (timeframeChange.change ?? 0) >= 0 ? 'text-green-500' : 'text-red-500'
                   }`}>
-                    <TrendingUp className={`h-5 w-5 ${((asset?.change24h ?? change24h) ?? 0) < 0 ? 'rotate-180' : ''}`} />
+                    <TrendingUp className={`h-5 w-5 ${(timeframeChange.change ?? 0) < 0 ? 'rotate-180' : ''}`} />
                     <span>
-                      {((asset?.change24h ?? change24h) ?? 0) >= 0 ? '+' : ''}{formatPrice(Math.abs(asset?.change24h ?? change24h ?? 0), asset.type, showTRYPrice)}
+                      {(timeframeChange.change ?? 0) >= 0 ? '+' : ''}{formatPrice(Math.abs(timeframeChange.change ?? 0), asset.type, showTRYPrice)}
                     </span>
                   </div>
-                  <div className="text-sm text-muted-foreground">24s Değişim</div>
+                  <div className="text-sm text-muted-foreground">
+                    {selectedChartTimeframe === '1D' ? '24s Değişim' :
+                     selectedChartTimeframe === '1W' ? '1 Hafta Değişim' :
+                     selectedChartTimeframe === '1M' ? '1 Ay Değişim' :
+                     selectedChartTimeframe === '3M' ? '3 Ay Değişim' :
+                     'Değişim'}
+                  </div>
                 </div>
                 <div className="text-center">
                   <div className={`text-xl sm:text-2xl font-bold ${
-                    ((asset?.changePercent24h ?? changePercent24h) ?? 0) >= 0 ? 'text-green-500' : 'text-red-500'
+                    (timeframeChange.changePercent ?? 0) >= 0 ? 'text-green-500' : 'text-red-500'
                   }`}>
-                    {((asset?.changePercent24h ?? changePercent24h) ?? 0) >= 0 ? '+' : ''}{((asset?.changePercent24h ?? changePercent24h) ?? 0).toFixed(2)}%
+                    {(timeframeChange.changePercent ?? 0) >= 0 ? '+' : ''}{(timeframeChange.changePercent ?? 0).toFixed(2)}%
                   </div>
-                  <div className="text-sm text-muted-foreground">24s Değişim (%)</div>
+                  <div className="text-sm text-muted-foreground">
+                    {selectedChartTimeframe === '1D' ? '24s Değişim (%)' :
+                     selectedChartTimeframe === '1W' ? '1 Hafta Değişim (%)' :
+                     selectedChartTimeframe === '1M' ? '1 Ay Değişim (%)' :
+                     selectedChartTimeframe === '3M' ? '3 Ay Değişim (%)' :
+                     'Değişim (%)'}
+                  </div>
                 </div>
               </div>
             </Card>
@@ -939,7 +1150,7 @@ const AssetDetail = () => {
                       <TrendingUp className="h-6 w-6 text-green-500" />
                       <div className="flex-1">
                         <div className="text-2xl font-bold">
-                          {asset.high24h ? formatPrice(asset.high24h, asset.type, showTRYPrice) : 'N/A'}
+                          {displayHigh24h ? formatPrice(displayHigh24h, asset.type, showTRYPrice) : 'N/A'}
                         </div>
                         <div className="text-sm text-muted-foreground">24s En Yüksek</div>
                       </div>
@@ -952,7 +1163,7 @@ const AssetDetail = () => {
                       <TrendingUp className="h-6 w-6 text-red-500 rotate-180" />
                       <div className="flex-1">
                         <div className="text-2xl font-bold">
-                          {asset.low24h ? formatPrice(asset.low24h, asset.type, showTRYPrice) : 'N/A'}
+                          {displayLow24h ? formatPrice(displayLow24h, asset.type, showTRYPrice) : 'N/A'}
                         </div>
                         <div className="text-sm text-muted-foreground">24s En Düşük</div>
                       </div>
@@ -965,7 +1176,13 @@ const AssetDetail = () => {
                       <Volume2 className="h-6 w-6 text-blue-500" />
                       <div className="flex-1">
                         <div className="text-2xl font-bold">
-                          {asset.volume24h ? formatLargeNumber(asset.volume24h) : 'N/A'}
+                          {displayVolume24h ? (
+                            asset.type === 'crypto' && showTRYPrice 
+                              ? `₺${formatLargeNumber(displayVolume24h)}`
+                              : asset.type === 'stock'
+                              ? `₺${formatLargeNumber(displayVolume24h)}`
+                              : `$${formatLargeNumber(displayVolume24h)}`
+                          ) : 'N/A'}
                         </div>
                         <div className="text-sm text-muted-foreground">24s Hacim</div>
                       </div>
@@ -978,17 +1195,19 @@ const AssetDetail = () => {
                       <DollarSign className="h-6 w-6 text-purple-500" />
                       <div className="flex-1">
                         <div className="text-2xl font-bold">
-                          {asset.marketCap !== undefined && asset.marketCap !== null && asset.marketCap > 0 ? (
-                            asset.type === 'stock' 
-                              ? `₺${formatLargeNumber(asset.marketCap)}`
-                              : `$${formatLargeNumber(asset.marketCap)}`
+                          {displayMarketCap !== undefined && displayMarketCap !== null && displayMarketCap > 0 ? (
+                            asset.type === 'crypto' && showTRYPrice
+                              ? `₺${formatLargeNumber(displayMarketCap)}`
+                              : asset.type === 'stock' 
+                              ? `₺${formatLargeNumber(displayMarketCap)}`
+                              : `$${formatLargeNumber(displayMarketCap)}`
                           ) : (
                             <span className="text-muted-foreground text-lg">N/A</span>
                           )}
                         </div>
                         <div className="text-sm text-muted-foreground">
                           Piyasa Değeri
-                          {asset.marketCap !== undefined && asset.marketCap !== null && asset.marketCap > 0 && (
+                          {displayMarketCap !== undefined && displayMarketCap !== null && displayMarketCap > 0 && (
                             <span className="ml-2 text-xs">(JSON - 15dk cache)</span>
                           )}
                         </div>
@@ -1125,12 +1344,12 @@ const AssetDetail = () => {
                         data={chartData}
                         title={`${asset.name} (${asset.symbol})`}
                         timeframe={selectedChartTimeframe}
-                        isPositive={changePercent24h >= 0}
-                        currency="TRY"
+                        isPositive={timeframeChange.changePercent >= 0}
+                        currency={asset.type === 'stock' ? 'TRY' : (showTRYPrice ? 'TRY' : 'USD')}
                         onTimeframeChange={handleChartTimeframeChange}
                         currentPrice={displayPrice}
-                        change24h={change24h}
-                        changePercent24h={changePercent24h}
+                        change24h={timeframeChange.change}
+                        changePercent24h={timeframeChange.changePercent}
                       />
                     )}
                     {!chartLoading && chartData.length === 0 && (

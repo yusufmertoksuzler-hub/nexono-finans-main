@@ -336,10 +336,12 @@ ${portfolioContext}`;
     };
   };
 
-  const sendToModel = async (text: string, conversationHistory: MessageItem[] = [], retryCount = 0): Promise<string> => {
+  const sendToModel = async (text: string, conversationHistory: MessageItem[] = [], retryCount = 0, useBackupKey = false): Promise<string> => {
     const payload = buildPayload(text, conversationHistory);
-    // Google Gemini API
-    const apiKey = ((import.meta as any).env?.VITE_GEMINI_API_KEY || 'AIzaSyCEbE1jf_UPGK8AgCB1--oCZTu3ndGHaoM').trim();
+    // Google Gemini API - yedek key desteği
+    const primaryKey = ((import.meta as any).env?.VITE_GEMINI_API_KEY || 'AIzaSyCEbE1jf_UPGK8AgCB1--oCZTu3ndGHaoM').trim();
+    const backupKey = 'AIzaSyCEwENQchtwME_fXEn_pdQe59RpUq8Iei8';
+    const apiKey = useBackupKey ? backupKey : primaryKey;
     const maxRetries = 2;
     const retryDelay = Math.min(2000 * (retryCount + 1), 5000);
 
@@ -423,6 +425,11 @@ ${portfolioContext}`;
         
         if (res.status === 401 || res.status === 403) {
           console.error('Gemini API 401/403 Error:', detail);
+          // Yedek key'i dene (sadece bir kez)
+          if (!useBackupKey && retryCount === 0) {
+            console.log('[AI] Ana API key başarısız, yedek key deneniyor...');
+            return sendToModel(text, conversationHistory, 0, true);
+          }
           throw new Error(`API anahtarı geçersiz veya yetkisiz. Lütfen API anahtarınızı kontrol edin. Hata: ${detail}`);
         }
         

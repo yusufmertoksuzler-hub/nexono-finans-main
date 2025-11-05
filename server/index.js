@@ -41,6 +41,10 @@ let lastUpdatedAt = null; // ISO string
 let coinsData = [];
 let coinsUpdatedAt = null; // ISO string
 
+// USD/TRY exchange rate cache
+let usdTryRate = 32.5; // Default rate
+let usdTryRateUpdatedAt = null; // ISO string
+
 async function fetchHisseler() {
 	const result = {};
 	for (const hisse of hisseler) {
@@ -572,6 +576,66 @@ async function fetchGlobal() {
   return data;
 }
 
+// USD/TRY kuru çek (Yahoo Finance)
+async function fetchUSDTRYRate() {
+  try {
+    console.log(`[${new Date().toISOString()}] USD/TRY kuru çekiliyor...`);
+    const quote = await yahooFinance.quote('TRY=X', { fields: [
+      "regularMarketPrice",
+      "regularMarketTime",
+      "regularMarketPreviousClose"
+    ] });
+    
+    if (quote && typeof quote.regularMarketPrice === "number") {
+      const rate = Number(quote.regularMarketPrice);
+      console.log(`✅ USD/TRY kuru: ${rate}`);
+      return {
+        rate: rate,
+        updatedAt: new Date(quote.regularMarketTime || Date.now()).toISOString(),
+        previousClose: typeof quote.regularMarketPreviousClose === "number" ? Number(quote.regularMarketPreviousClose) : null
+      };
+    }
+    throw new Error('USD/TRY kuru alınamadı');
+  } catch (error) {
+    console.error(`⚠️ USD/TRY kuru çekilirken hata:`, error?.message || error);
+    // Mevcut kuru koru veya varsayılan değeri döndür
+    return {
+      rate: usdTryRate,
+      updatedAt: usdTryRateUpdatedAt || new Date().toISOString(),
+      previousClose: null,
+      error: error?.message || String(error)
+    };
+  }
+}
+
+// USD/TRY kuru güncelle ve JSON'a kaydet
+async function updateUSDTRYRate() {
+  try {
+    const rateData = await fetchUSDTRYRate();
+    usdTryRate = rateData.rate;
+    usdTryRateUpdatedAt = rateData.updatedAt;
+    
+    const publicDir = path.resolve(__dirname, "../public");
+    const jsonPath = path.join(publicDir, "usd-try-rate.json");
+    
+    if (!fs.existsSync(publicDir)) {
+      fs.mkdirSync(publicDir, { recursive: true });
+    }
+    
+    const payload = {
+      rate: usdTryRate,
+      updatedAt: usdTryRateUpdatedAt,
+      previousClose: rateData.previousClose,
+      error: rateData.error || null
+    };
+    
+    fs.writeFileSync(jsonPath, JSON.stringify(payload, null, 2), 'utf8');
+    console.log(`✅ USD/TRY kuru kaydedildi: ${jsonPath} (${usdTryRate})`);
+  } catch (error) {
+    console.error('❌ USD/TRY kuru güncelleme hatası:', error?.message || error);
+  }
+}
+
 async function updateGlobal() {
   try {
     console.log(`[${new Date().toISOString()}] Global veriler güncelleniyor...`);
@@ -589,6 +653,13 @@ async function updateGlobal() {
 }
 
 updateGlobal();
+
+// USD/TRY kuru güncelleme - server başlar başlamaz ve her 15 dakikada bir
+updateUSDTRYRate();
+setTimeout(function updateUSDTRYRateInterval() {
+  updateUSDTRYRate();
+  setTimeout(updateUSDTRYRateInterval, 15 * 60 * 1000);
+}, 15 * 60 * 1000);
 
 // --- AI PROXY (OpenRouter with Gemini) ---
 const app = express();
