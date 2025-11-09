@@ -1,4 +1,4 @@
-app = "nexono-finans"
+app = "nexono-finans-main"
 primary_region = "iad"
 
 [build]
