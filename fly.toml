@@ -8,6 +8,10 @@ primary_region = "iad"
   PORT = "3001"
   NODE_ENV = "production"
 
+# Uygulamanın nasıl başlatılacağını Fly'a söylüyoruz
+[processes]
+  app = "sh -c 'npm run server & npm run dev'"
+
 [http_service]
   internal_port = 3001
   force_https = true
