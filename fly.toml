@@ -1,0 +1,26 @@
+app = "nexono-finans-main"
+primary_region = "iad"
+
+[build]
+  builder = "paketobuildpacks/builder:base"
+
+[env]
+  PORT = "3001"
+  NODE_ENV = "production"
+
+# Uygulamanın nasıl başlatılacağını Fly'a söylüyoruz
+[processes]
+  app = "sh -c 'npm run server & npm run dev'"
+
+[http_service]
+  internal_port = 3001
+  force_https = true
+  auto_stop_machines = false
+  auto_start_machines = true
+  min_machines_running = 1
+  processes = ["app"]
+
+[[vm]]
+  cpu_kind = "shared"
+  cpus = 1
+  memory_mb = 256
