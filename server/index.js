@@ -663,10 +663,22 @@ setTimeout(function updateUSDTRYRateInterval() {
 
 // --- AI PROXY (OpenRouter with Gemini) ---
 const app = express();
-app.use(cors());
+
+// CORS ayarları - Railway için
+const corsOptions = {
+  origin: [
+    'http://localhost:5173',
+    'http://localhost:8080',
+    process.env.RAILWAY_PUBLIC_DOMAIN,
+    process.env.SITE_URL,
+    process.env.RENDER_EXTERNAL_URL,
+  ].filter(Boolean),
+  credentials: true
+};
+app.use(cors(corsOptions));
 app.use(express.json({ limit: '1mb' }));
 
-const OPENROUTER_API_KEY = (process.env.OPENROUTER_API_KEY || "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").trim();
+const OPENROUTER_API_KEY = (process.env.OPENROUTER_API_KEY || "").trim();
 const SITE_URL = process.env.SITE_URL || "http://localhost:5173";
 
 app.post("/api/ai/chat", async (req, res) => {
@@ -720,8 +732,40 @@ app.post("/api/ai/chat", async (req, res) => {
   }
 });
 
-const PORT = process.env.PORT || 3001;
-app.listen(PORT, () => {
+// Static files serving - Frontend build'i serve et
+const distPath = path.resolve(__dirname, '../dist');
+console.log(`[server] Checking dist directory at: ${distPath}`);
+const distExists = fs.existsSync(distPath);
+console.log(`[server] dist exists: ${distExists}`);
+
+if (distExists) {
+  app.use(express.static(distPath));
+  console.log(`[server] ✅ Static assets served from ${distPath}`);
+
+  app.get('/', (_req, res) => {
+    const indexPath = path.join(distPath, 'index.html');
+    if (fs.existsSync(indexPath)) {
+      return res.sendFile(indexPath);
+    }
+    return res.status(404).json({
+      error: 'index.html not found',
+      hint: 'Frontend build missing. Please run npm run build before starting the server.'
+    });
+  });
+} else {
+  app.get('/', (_req, res) => {
+    res.status(500).json({
+      error: 'Frontend build not found',
+      hint: 'dist directory missing. Ensure npm run build runs before starting the server.',
+      distPath
+    });
+  });
+}
+
+const PORT = Number(process.env.PORT) || 3001;
+const HOST = process.env.HOST || '0.0.0.0';
+app.listen(PORT, HOST, () => {
+  console.log(`[server] Server başlatıldı: http://${HOST}:${PORT}`);
   console.log(`[server] AI proxy dinlemede: http://localhost:${PORT}/api/ai/chat`);
   console.log(`[server] OpenRouter API Key: ${OPENROUTER_API_KEY ? OPENROUTER_API_KEY.substring(0, 15) + '...' : 'MISSING'}`);
   console.log(`[server] Model: google/gemini-2.0-flash-exp:free`);
@@ -1334,6 +1378,25 @@ app.get('/api/chart/:symbol', (req, res) => {
       error: 'Failed to read chart data',
       message: error.message 
     });
+  }
+});
+
+// SPA routing - Tüm route'ları frontend'e yönlendir (API route'ları hariç)
+// Express 5'te * wildcard desteklenmiyor, middleware kullanıyoruz
+// Bu middleware'i TÜM API route'larından SONRA ekliyoruz
+app.use((req, res, next) => {
+  // API route'ları değilse frontend'e yönlendir
+  if (!req.path.startsWith('/api') && !req.path.startsWith('/hisseler.json') && 
+      !req.path.startsWith('/coins.json') && !req.path.startsWith('/coins_try.json') &&
+      !req.path.startsWith('/usd-try-rate.json') && !req.path.startsWith('/coins-tl.json')) {
+    const indexPath = path.join(distPath, 'index.html');
+    if (fs.existsSync(indexPath)) {
+      res.sendFile(indexPath);
+    } else {
+      res.status(404).json({ error: 'Frontend build not found' });
+    }
+  } else {
+    next(); // API route'ları ve JSON dosyaları için next() çağır
   }
 });
 
