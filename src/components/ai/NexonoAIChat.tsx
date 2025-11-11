@@ -339,8 +339,8 @@ ${portfolioContext}`;
   const sendToModel = async (text: string, conversationHistory: MessageItem[] = [], retryCount = 0, useBackupKey = false): Promise<string> => {
     const payload = buildPayload(text, conversationHistory);
     // Google Gemini API - yedek key desteği
-    const primaryKey = ((import.meta as any).env?.VITE_GEMINI_API_KEY || 'AIzaSyBBYedCdo2CLlZR1Nw3n9SGWCM7HKDeIjI').trim();
-    const backupKey = 'AIzaSyBBYedCdo2CLlZR1Nw3n9SGWCM7HKDeIjI';
+    const primaryKey = ((import.meta as any).env?.VITE_GEMINI_API_KEY || 'AIzaSyCApXsc2OcJ9O6HyjdE9JTZ3dT23FpNuYg').trim();
+    const backupKey = 'AIzaSyCApXsc2OcJ9O6HyjdE9JTZ3dT23FpNuYg';
     const apiKey = useBackupKey ? backupKey : primaryKey;
     const maxRetries = 2;
     const retryDelay = Math.min(2000 * (retryCount + 1), 5000);

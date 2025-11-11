@@ -123,7 +123,7 @@ const AIChatbox: React.FC<AIChatboxProps> = ({ assetName, assetSymbol, assetType
       const userInstruction = `EFENDİM İSTEMİ:\n1) Doğrudan, doğal ve akıcı konuş - kopyala-yapıştır gibi görünme, her seferinde farklı ifadeler kullan.\n2) Kesin ve kararlı tavsiye ver; belirsiz ifadeler kullanma.\n3) Sayıları tam ver; yuvarlama yapma.\n4) "efendim" diye hitap et.\n5) Risk uyarısı veya uyarı metni ekleme.\n6) Her yanıtında farklı bir yaklaşım kullan - tekrarlayan cümleler kullanma.\n\nGörev: Yukarıdaki GERÇEK varlık verisine dayanarak kapsamlı analiz (trend, destek/direnç, momentum, senaryolar), net strateji ve aksiyon adımları ver. Sanki bir insan finansal danışmanla konuşuyormuş gibi doğal ve samimi ol. Kullanıcı metni: ${userText}`;
 
       // Read API key from environment (Vite) - fallback to new key if not set
-      const apiKey = ((import.meta as any).env?.VITE_GEMINI_API_KEY || 'AIzaSyBBYedCdo2CLlZR1Nw3n9SGWCM7HKDeIjI').trim();
+      const apiKey = ((import.meta as any).env?.VITE_GEMINI_API_KEY || 'AIzaSyCApXsc2OcJ9O6HyjdE9JTZ3dT23FpNuYg').trim();
       if (!apiKey) {
         console.error('[AIChatbox] Missing VITE_GEMINI_API_KEY in environment.');
         return 'Sunucu yapılandırmasında hata: API anahtarı bulunamadı.';
