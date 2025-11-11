@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2025-11-11T17:40:41.940Z",
+  "updatedAt": "2025-11-11T19:11:45.535Z",
   "data": {
     "ASELS.IS": {
       "fiyat": 181.4,
@@ -22,7 +22,7 @@
       "tvHigh24h": null,
       "tvLow24h": null,
       "tvVolume": null,
-      "updatedAt": "2025-11-11T17:40:30.766Z"
+      "updatedAt": "2025-11-11T19:11:35.193Z"
     },
     "THYAO.IS": {
       "fiyat": 273,
@@ -45,7 +45,7 @@
       "tvHigh24h": null,
       "tvLow24h": null,
       "tvVolume": null,
-      "updatedAt": "2025-11-11T17:40:31.081Z"
+      "updatedAt": "2025-11-11T19:11:35.504Z"
     },
     "GARAN.IS": {
       "fiyat": 127.7,
@@ -68,7 +68,7 @@
       "tvHigh24h": null,
       "tvLow24h": null,
       "tvVolume": null,
-      "updatedAt": "2025-11-11T17:40:31.520Z"
+      "updatedAt": "2025-11-11T19:11:35.809Z"
     },
     "BIMAS.IS": {
       "fiyat": 555,
@@ -91,7 +91,7 @@
       "tvHigh24h": null,
       "tvLow24h": null,
       "tvVolume": null,
-      "updatedAt": "2025-11-11T17:40:31.917Z"
+      "updatedAt": "2025-11-11T19:11:36.124Z"
     },
     "AKBNK.IS": {
       "fiyat": 58.3,
@@ -114,7 +114,7 @@
       "tvHigh24h": null,
       "tvLow24h": null,
       "tvVolume": null,
-      "updatedAt": "2025-11-11T17:40:32.219Z"
+      "updatedAt": "2025-11-11T19:11:36.524Z"
     },
     "EREGL.IS": {
       "fiyat": 24.48,
@@ -137,7 +137,7 @@
       "tvHigh24h": null,
       "tvLow24h": null,
       "tvVolume": null,
-      "updatedAt": "2025-11-11T17:40:32.595Z"
+      "updatedAt": "2025-11-11T19:11:36.859Z"
     },
     "SISE.IS": {
       "fiyat": 35.2,
@@ -160,7 +160,7 @@
       "tvHigh24h": null,
       "tvLow24h": null,
       "tvVolume": null,
-      "updatedAt": "2025-11-11T17:40:33.007Z"
+      "updatedAt": "2025-11-11T19:11:37.170Z"
     },
     "PETKM.IS": {
       "fiyat": 16.5,
@@ -183,7 +183,7 @@
       "tvHigh24h": null,
       "tvLow24h": null,
       "tvVolume": null,
-      "updatedAt": "2025-11-11T17:40:33.417Z"
+      "updatedAt": "2025-11-11T19:11:37.475Z"
     },
     "TUPRS.IS": {
       "fiyat": 192.4,
@@ -206,7 +206,7 @@
       "tvHigh24h": null,
       "tvLow24h": null,
       "tvVolume": null,
-      "updatedAt": "2025-11-11T17:40:33.737Z"
+      "updatedAt": "2025-11-11T19:11:37.792Z"
     },
     "TAVHL.IS": {
       "fiyat": 261,
@@ -229,7 +229,7 @@
       "tvHigh24h": null,
       "tvLow24h": null,
       "tvVolume": null,
-      "updatedAt": "2025-11-11T17:40:34.046Z"
+      "updatedAt": "2025-11-11T19:11:38.104Z"
     },
     "ISCTR.IS": {
       "fiyat": 12.2,
@@ -252,7 +252,7 @@
       "tvHigh24h": null,
       "tvLow24h": null,
       "tvVolume": null,
-      "updatedAt": "2025-11-11T17:40:34.363Z"
+      "updatedAt": "2025-11-11T19:11:38.471Z"
     },
     "HALKB.IS": {
       "fiyat": 26.8,
@@ -275,7 +275,7 @@
       "tvHigh24h": null,
       "tvLow24h": null,
       "tvVolume": null,
-      "updatedAt": "2025-11-11T17:40:34.675Z"
+      "updatedAt": "2025-11-11T19:11:38.777Z"
     },
     "VAKBN.IS": {
       "fiyat": 24.86,
@@ -298,7 +298,7 @@
       "tvHigh24h": null,
       "tvLow24h": null,
       "tvVolume": null,
-      "updatedAt": "2025-11-11T17:40:34.986Z"
+      "updatedAt": "2025-11-11T19:11:39.084Z"
     },
     "YKBNK.IS": {
       "fiyat": 32,
@@ -321,7 +321,7 @@
       "tvHigh24h": null,
       "tvLow24h": null,
       "tvVolume": null,
-      "updatedAt": "2025-11-11T17:40:35.377Z"
+      "updatedAt": "2025-11-11T19:11:39.494Z"
     },
     "TCELL.IS": {
       "fiyat": 94.4,
@@ -344,7 +344,7 @@
       "tvHigh24h": null,
       "tvLow24h": null,
       "tvVolume": null,
-      "updatedAt": "2025-11-11T17:40:35.967Z"
+      "updatedAt": "2025-11-11T19:11:39.904Z"
     },
     "FROTO.IS": {
       "fiyat": 94.4,
@@ -354,7 +354,7 @@
       "oncekiKapanis": 96.45,
       "acilis": 96.5,
       "yuksek": 97.85,
-      "dusuk": 93.55,
+      "dusuk": 93.5,
       "hacim": 22344573,
       "ortalamaHacim3A": 14713352,
       "piyasaDegeri": 340875673600,
@@ -367,7 +367,7 @@
       "tvHigh24h": null,
       "tvLow24h": null,
       "tvVolume": null,
-      "updatedAt": "2025-11-11T17:40:36.376Z"
+      "updatedAt": "2025-11-11T19:11:40.228Z"
     },
     "TOASO.IS": {
       "fiyat": 226.1,
@@ -390,7 +390,7 @@
       "tvHigh24h": null,
       "tvLow24h": null,
       "tvVolume": null,
-      "updatedAt": "2025-11-11T17:40:36.696Z"
+      "updatedAt": "2025-11-11T19:11:40.530Z"
     },
     "TSKB.IS": {
       "fiyat": 11.83,
@@ -413,7 +413,7 @@
       "tvHigh24h": null,
       "tvLow24h": null,
       "tvVolume": null,
-      "updatedAt": "2025-11-11T17:40:37.017Z"
+      "updatedAt": "2025-11-11T19:11:40.838Z"
     },
     "TTRAK.IS": {
       "fiyat": 544,
@@ -436,7 +436,7 @@
       "tvHigh24h": null,
       "tvLow24h": null,
       "tvVolume": null,
-      "updatedAt": "2025-11-11T17:40:37.342Z"
+      "updatedAt": "2025-11-11T19:11:41.145Z"
     },
     "MGROS.IS": {
       "fiyat": 495,
@@ -459,7 +459,7 @@
       "tvHigh24h": null,
       "tvLow24h": null,
       "tvVolume": null,
-      "updatedAt": "2025-11-11T17:40:37.719Z"
+      "updatedAt": "2025-11-11T19:11:41.451Z"
     },
     "KCHOL.IS": {
       "fiyat": 163.7,
@@ -482,7 +482,7 @@
       "tvHigh24h": null,
       "tvLow24h": null,
       "tvVolume": null,
-      "updatedAt": "2025-11-11T17:40:38.038Z"
+      "updatedAt": "2025-11-11T19:11:41.767Z"
     },
     "AKSUE.IS": {
       "fiyat": 16.79,
@@ -505,7 +505,7 @@
       "tvHigh24h": null,
       "tvLow24h": null,
       "tvVolume": null,
-      "updatedAt": "2025-11-11T17:40:38.346Z"
+      "updatedAt": "2025-11-11T19:11:42.080Z"
     },
     "KRDMD.IS": {
       "fiyat": 24.58,
@@ -528,7 +528,7 @@
       "tvHigh24h": null,
       "tvLow24h": null,
       "tvVolume": null,
-      "updatedAt": "2025-11-11T17:40:38.665Z"
+      "updatedAt": "2025-11-11T19:11:42.390Z"
     },
     "KOZAL.IS": {
       "fiyat": 28.18,
@@ -551,7 +551,7 @@
       "tvHigh24h": null,
       "tvLow24h": null,
       "tvVolume": null,
-      "updatedAt": "2025-11-11T17:40:38.979Z"
+      "updatedAt": "2025-11-11T19:11:42.699Z"
     },
     "KOZAA.IS": {
       "fiyat": 88.3,
@@ -574,7 +574,7 @@
       "tvHigh24h": null,
       "tvLow24h": null,
       "tvVolume": null,
-      "updatedAt": "2025-11-11T17:40:39.365Z"
+      "updatedAt": "2025-11-11T19:11:42.998Z"
     },
     "ARCLK.IS": {
       "fiyat": 104.5,
@@ -597,7 +597,7 @@
       "tvHigh24h": null,
       "tvLow24h": null,
       "tvVolume": null,
-      "updatedAt": "2025-11-11T17:40:39.700Z"
+      "updatedAt": "2025-11-11T19:11:43.293Z"
     },
     "ENKAI.IS": {
       "fiyat": 73.5,
@@ -620,7 +620,7 @@
       "tvHigh24h": null,
       "tvLow24h": null,
       "tvVolume": null,
-      "updatedAt": "2025-11-11T17:40:40.011Z"
+      "updatedAt": "2025-11-11T19:11:43.596Z"
     },
     "ISGYO.IS": {
       "fiyat": 20.18,
@@ -643,7 +643,7 @@
       "tvHigh24h": null,
       "tvLow24h": null,
       "tvVolume": null,
-      "updatedAt": "2025-11-11T17:40:40.330Z"
+      "updatedAt": "2025-11-11T19:11:43.897Z"
     },
     "KAPLM.IS": {
       "fiyat": 440.25,
@@ -666,7 +666,7 @@
       "tvHigh24h": null,
       "tvLow24h": null,
       "tvVolume": null,
-      "updatedAt": "2025-11-11T17:40:40.690Z"
+      "updatedAt": "2025-11-11T19:11:44.204Z"
     },
     "IHLGM.IS": {
       "fiyat": 2.74,
@@ -689,7 +689,7 @@
       "tvHigh24h": null,
       "tvLow24h": null,
       "tvVolume": null,
-      "updatedAt": "2025-11-11T17:40:41.012Z"
+      "updatedAt": "2025-11-11T19:11:44.614Z"
     },
     "KORDS.IS": {
       "fiyat": 51.85,
@@ -712,7 +712,7 @@
       "tvHigh24h": null,
       "tvLow24h": null,
       "tvVolume": null,
-      "updatedAt": "2025-11-11T17:40:41.414Z"
+      "updatedAt": "2025-11-11T19:11:44.927Z"
     },
     "KARSN.IS": {
       "fiyat": 9.58,
@@ -735,7 +735,7 @@
       "tvHigh24h": null,
       "tvLow24h": null,
       "tvVolume": null,
-      "updatedAt": "2025-11-11T17:40:41.731Z"
+      "updatedAt": "2025-11-11T19:11:45.333Z"
     }
   }
 }

@@ -129,8 +129,8 @@ ${context}`;
 Görev: Yukarıdaki GERÇEK varlık verisine dayanarak kapsamlı analiz (trend, destek/direnç, momentum, senaryolar), net strateji ve aksiyon adımları ver. Sanki bir insan finansal danışmanla konuşuyormuş gibi doğal ve samimi ol. Kullanıcı metni: ${userText}`;
 
       // Google Gemini API - yedek key desteği
-      const primaryKey = ((import.meta as any).env?.VITE_GEMINI_API_KEY || 'AIzaSyCEbE1jf_UPGK8AgCB1--oCZTu3ndGHaoM').trim();
-      const backupKey = 'AIzaSyCEwENQchtwME_fXEn_pdQe59RpUq8Iei8';
+      const primaryKey = ((import.meta as any).env?.VITE_GEMINI_API_KEY || 'AIzaSyAG3FZmYLDxvEFGgU3VmIenLQWJNP-64zE').trim();
+      const backupKey = 'AIzaSyAG3FZmYLDxvEFGgU3VmIenLQWJNP-64zE';
       let apiKey = primaryKey;
       
       const res = await fetch(`https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash-exp:generateContent?key=${apiKey}`, {

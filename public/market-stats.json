@@ -1,19 +1,19 @@
 {
-  "updatedAt": "2025-11-11T17:39:37.514Z",
+  "updatedAt": "2025-11-11T19:09:40.408Z",
   "usdTryRate": 42.21,
   "data": {
     "totalMarketCap": {
-      "usd": 3577365176135.9033,
-      "try": 151000584084696.47,
-      "change24h": -2.2089682798570722
+      "usd": 3568708648045.2676,
+      "try": 150635192033990.75,
+      "change24h": -2.505151605406682
     },
     "totalVolume": {
-      "usd": 186790360091.9826,
-      "try": 7884421099482.586,
+      "usd": 185425795870.46985,
+      "try": 7826822843692.532,
       "change24h": 0
     },
-    "btcDominance": 57.58134835815768,
-    "activeCoins": 19412,
-    "fearGreedIndex": 8
+    "btcDominance": 57.64258527317098,
+    "activeCoins": 19414,
+    "fearGreedIndex": 93
   }
 }
