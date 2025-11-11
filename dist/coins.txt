@@ -1,501 +1,501 @@
 ID	SYMBOL	NAME	PRICE	CHANGE_24H%	VOLUME
-bitcoin	btc	Bitcoin	103226	-2.44607	71753056376
-ethereum	eth	Ethereum	3459.16	-3.13324	35265415157
-tether	usdt	Tether	0.999679	-0.01619	115237160113
-ripple	xrp	XRP	2.42	-5.30149	4349906859
-binancecoin	bnb	BNB	962.61	-2.60353	1822482142
-solana	sol	Solana	158.1	-5.20114	5993010020
-usd-coin	usdc	USDC	0.99971	-0.00909	7942808277
-staked-ether	steth	Lido Staked Ether	3455.61	-3.02995	73281723
-tron	trx	TRON	0.298642	1.03088	666377645
-dogecoin	doge	Dogecoin	0.174585	-3.11055	1965537154
-cardano	ada	Cardano	0.563164	-4.41632	1021130025
-figure-heloc	figr_heloc	Figure Heloc	1.036	0.19444	18620323
-wrapped-steth	wsteth	Wrapped stETH	4212.21	-3.15688	36303371
-wrapped-bitcoin	wbtc	Wrapped Bitcoin	103097	-2.33019	270363931
-wrapped-beacon-eth	wbeth	Wrapped Beacon ETH	3740	-3.24059	4549847
-whitebit	wbt	WhiteBIT Coin	54.11	-1.47141	94480084
-chainlink	link	Chainlink	15.67	-3.14658	745734048
-hyperliquid	hype	Hyperliquid	39.37	-5.85367	432765544
-bitcoin-cash	bch	Bitcoin Cash	507.95	-0.60632	382696473
-usds	usds	USDS	0.99851	-0.2367	23783937
-stellar	xlm	Stellar	0.284701	-5.44514	201647337
-wrapped-eeth	weeth	Wrapped eETH	3728.87	-3.14597	6092400
-binance-bridged-usdt-bnb-smart-chain	bsc-usd	Binance Bridged USDT (BNB Smart Chain)	0.999246	-0.03897	2309164722
-leo-token	leo	LEO Token	9.28	1.94088	3760556
-ethena-usde	usde	Ethena USDe	0.999155	-0.01999	179810311
-weth	weth	WETH	3454.25	-3.34774	637561465
-zcash	zec	Zcash	484.3	-18.28675	3286842732
-litecoin	ltc	Litecoin	100.34	-6.66508	968652862
-hedera-hashgraph	hbar	Hedera	0.180296	-6.64249	314516346
-coinbase-wrapped-btc	cbbtc	Coinbase Wrapped BTC	103154	-2.45985	499678167
-sui	sui	Sui	2.05	-4.90453	848894908
-avalanche-2	avax	Avalanche	17.32	-4.32707	482867010
-monero	xmr	Monero	376.36	-3.09061	211637067
-shiba-inu	shib	Shiba Inu	0.00000974	-3.84007	160900783
-uniswap	uni	Uniswap	8.63	19.27044	4379374199
-polkadot	dot	Polkadot	3.14	-3.08871	359077485
-the-open-network	ton	Toncoin	2.04	-4.03278	132187169
-dai	dai	Dai	1	0.05745	124162175
-crypto-com-chain	cro	Cronos	0.127206	-4.89109	29480318
-ethena-staked-usde	susde	Ethena Staked USDe	1.2	-0.03027	32225383
-canton-network	cc	Canton	0.123857	3.16068	53713303
-world-liberty-financial	wlfi	World Liberty Financial	0.15588	-1.59754	245925822
-memecore	m	MemeCore	2.42	-2.70326	13500739
-mantle	mnt	Mantle	1.26	-4.05106	117502740
-usdt0	usdt0	USDT0	0.999591	-0.04436	273748008
-susds	susds	sUSDS	1.077	0.0321	96755464
-bittensor	tao	Bittensor	368.73	-3.4665	206733989
-internet-computer	icp	Internet Computer	6.31	-8.4763	467391094
-near	near	NEAR Protocol	2.62	-8.431	542257043
-aave	aave	Aave	212.38	-4.71999	479883032
-paypal-usd	pyusd	PayPal USD	0.999649	-0.06687	132233685
-bitget-token	bgb	Bitget Token	4.09	-0.22265	67505227
-usd1-wlfi	usd1	USD1	0.999154	-0.03268	246986084
-okb	okb	OKB	124.4	-2.8326	42930405
-pump-fun	pump	Pump.fun	0.00439434	0.71414	413977725
-c1usd	c1usd	Currency One USD	1	0.00705	179400
+bitcoin	btc	Bitcoin	102805	-3.21185	71755557120
+ethereum	eth	Ethereum	3435.1	-3.90737	35084599499
+tether	usdt	Tether	0.999916	0.01779	113749287641
+ripple	xrp	XRP	2.41	-6.3424	4285195213
+binancecoin	bnb	BNB	958.47	-3.27758	1842357687
+solana	sol	Solana	156.75	-6.52384	5968331889
+usd-coin	usdc	USDC	0.999709	-0.01247	8813541667
+staked-ether	steth	Lido Staked Ether	3435.11	-3.81473	71052790
+tron	trx	TRON	0.298836	1.19207	695294011
+dogecoin	doge	Dogecoin	0.173188	-3.9689	1980489722
+cardano	ada	Cardano	0.559669	-5.1941	801927534
+figure-heloc	figr_heloc	Figure Heloc	1.036	0.25968	18352563
+wrapped-steth	wsteth	Wrapped stETH	4190.29	-3.75338	34666221
+wrapped-bitcoin	wbtc	Wrapped Bitcoin	102673	-2.9788	271334396
+wrapped-beacon-eth	wbeth	Wrapped Beacon ETH	3721.04	-3.77406	4735814
+whitebit	wbt	WhiteBIT Coin	53.96	-1.9598	94867415
+chainlink	link	Chainlink	15.46	-4.56134	749931944
+hyperliquid	hype	Hyperliquid	39.04	-7.30074	434793834
+bitcoin-cash	bch	Bitcoin Cash	508.04	-0.34563	385784033
+usds	usds	USDS	0.999682	-0.02854	26344218
+stellar	xlm	Stellar	0.282195	-6.61676	202917423
+binance-bridged-usdt-bnb-smart-chain	bsc-usd	Binance Bridged USDT (BNB Smart Chain)	0.999382	-0.08115	2500904643
+wrapped-eeth	weeth	Wrapped eETH	3711.14	-3.8275	5785286
+leo-token	leo	LEO Token	9.26	0.48609	3681944
+ethena-usde	usde	Ethena USDe	0.998813	-0.05454	181943043
+weth	weth	WETH	3436.95	-3.87487	301004774
+zcash	zec	Zcash	472.2	-18.32305	3144591264
+hedera-hashgraph	hbar	Hedera	0.179609	-6.70281	310506637
+litecoin	ltc	Litecoin	99.45	-7.30115	957693217
+coinbase-wrapped-btc	cbbtc	Coinbase Wrapped BTC	102820	-3.09825	501034525
+sui	sui	Sui	2.02	-6.25248	861290146
+avalanche-2	avax	Avalanche	17.14	-5.30522	481957916
+monero	xmr	Monero	372.75	-2.65009	209085104
+shiba-inu	shib	Shiba Inu	0.00000969	-4.03248	159170759
+uniswap	uni	Uniswap	8.67	17.01705	4289885969
+the-open-network	ton	Toncoin	2.04	-4.36338	137155456
+polkadot	dot	Polkadot	3.09	-4.9643	360641071
+dai	dai	Dai	1	0.04704	126725737
+ethena-staked-usde	susde	Ethena Staked USDe	1.2	-0.05605	30070729
+crypto-com-chain	cro	Cronos	0.125521	-6.15544	30473105
+world-liberty-financial	wlfi	World Liberty Financial	0.151921	-1.92541	238132063
+memecore	m	MemeCore	2.44	1.19304	13548324
+canton-network	cc	Canton	0.116773	-4.15592	52828916
+mantle	mnt	Mantle	1.25	-5.36234	116630224
+usdt0	usdt0	USDT0	0.999515	-0.0251	250731359
+susds	susds	sUSDS	1.076	0.08826	100664271
+bittensor	tao	Bittensor	364.57	-5.46875	206139378
+internet-computer	icp	Internet Computer	6.15	-12.61288	468600446
+near	near	NEAR Protocol	2.59	-8.97391	538730141
+aave	aave	Aave	210.79	-5.56813	473813459
+paypal-usd	pyusd	PayPal USD	0.999869	-0.01011	135903638
+bitget-token	bgb	Bitget Token	4.1	-0.0379	69939963
+usd1-wlfi	usd1	USD1	0.999083	-0.04267	258154243
+okb	okb	OKB	122.18	-5.05129	43559545
+c1usd	c1usd	Currency One USD	1	0.01092	131026
+pump-fun	pump	Pump.fun	0.00430891	-2.99381	419151474
 blackrock-usd-institutional-digital-liquidity-fund	buidl	BlackRock USD Institutional Digital Liquidity Fund	1	0	0
-pepe	pepe	Pepe	0.00000592	-5.22223	364091415
-ethereum-classic	etc	Ethereum Classic	15.83	-3.22868	95809918
-ethena	ena	Ethena	0.318368	-5.2292	340000635
-jito-staked-sol	jitosol	Jito Staked SOL	196.22	-5.27712	22431734
-aptos	apt	Aptos	3.14	-3.87872	323982602
-aster-2	aster	Aster	1.084	0.80587	678099277
-tether-gold	xaut	Tether Gold	4110.4	0.11357	296839353
-falcon-finance	usdf	Falcon USD	0.99924	0.06494	2340217
-binance-peg-weth	weth	Binance-Peg WETH	3455.18	-3.2538	73134237
-ondo-finance	ondo	Ondo	0.659017	-4.144	78070335
-jupiter-perpetuals-liquidity-provider-token	jlp	Jupiter Perpetuals Liquidity Provider Token	5.04	-2.60295	83330686
-wrapped-solana	sol	Wrapped SOL	158.06	-5.31563	965607066
-pi-network	pi	Pi Network	0.225245	-2.07728	30290216
-usdtb	usdtb	USDtb	0.998932	-0.0471	275508
-polygon-ecosystem-token	pol	POL (ex-MATIC)	0.173865	-3.41054	80512170
-worldcoin-wld	wld	Worldcoin	0.787224	-4.06051	149538771
-htx-dao	htx	HTX DAO	0.00000182	0.8246	11630225
-kucoin-shares	kcs	KuCoin	13.03	-0.83188	7856002
-filecoin	fil	Filecoin	2.3	-11.24755	569933470
-official-trump	trump	Official Trump	8.09	-13.98204	1069244196
-algorand	algo	Algorand	0.179714	-5.13098	73156611
-arbitrum	arb	Arbitrum	0.281547	-6.57212	206263990
-hash-2	hash	Provenance Blockchain	0.03001203	-0.27908	2949.67
-vechain	vet	VeChain	0.01758619	1.4769	69988026
-rocket-pool-eth	reth	Rocket Pool ETH	3965.63	-2.74743	35241375
-binance-staked-sol	bnsol	Binance Staked SOL	170.89	-5.68893	2825033
-cosmos	atom	Cosmos Hub	2.99	-2.65396	77729186
-gatechain-token	gt	Gate	11.82	-1.98322	4476818
-pax-gold	paxg	PAX Gold	4108.17	0.12208	168711531
-kaspa	kas	Kaspa	0.050658	-4.58217	38320621
-kinetic-staked-hype	khype	Kinetiq Staked HYPE	39.49	-5.67007	26566214
-bfusd	bfusd	BFUSD	0.999651	-0.00992	9286666
-binance-bridged-usdc-bnb-smart-chain	usdc	Binance Bridged USDC (BNB Smart Chain)	0.99958	-0.07798	1057067641
-syrupusdt	syrupusdt	syrupUSDT	1.1	0.10127	17295.92
-render-token	render	Render	2.44	-4.34239	93997655
-kelp-dao-restaked-eth	rseth	Kelp DAO Restaked ETH	3645.11	-3.43525	283123
-wbnb	wbnb	Wrapped BNB	961.74	-2.75002	521853596
-ignition-fbtc	fbtc	Function FBTC	102850	-2.81885	246031
-flare-networks	flr	Flare	0.01560762	-4.73663	8604801
-quant-network	qnt	Quant	84.02	0.22864	18554974
-syrupusdc	syrupusdc	syrupUSDC	1.14	0.0003	3960409
-lombard-staked-btc	lbtc	Lombard Staked BTC	103154	-2.28264	12695949
-sky	sky	Sky	0.052651	-5.04415	15168031
-story-2	ip	Story	3.66	-2.97096	44308350
-liquid-staked-ethereum	lseth	Liquid Staked ETH	3734.99	-2.28033	132175
-sei-network	sei	Sei	0.178807	-4.48556	140354304
-jupiter-exchange-solana	jup	Jupiter	0.343058	-4.59896	47577427
-nexo	nexo	NEXO	1.086	-3.64978	8944917
-xdce-crowd-sale	xdc	XDC Network	0.060491	-1.49643	37922282
-global-dollar	usdg	Global Dollar	0.999705	-0.02766	26307621
-renzo-restaked-eth	ezeth	Renzo Restaked ETH	3673.16	-3.165	594890
-ripple-usd	rlusd	Ripple USD	1	0.02962	118560627
-morpho	morpho	Morpho	1.99	-0.63339	24816126
-bonk	bonk	Bonk	0.00001268	-5.30258	145229836
-solv-btc	solvbtc	Solv Protocol BTC	102945	-2.27579	259149
-aerodrome-finance	aero	Aerodrome Finance	1.15	6.5234	255336010
+pepe	pepe	Pepe	0.00000587	-6.00654	355862089
+ethereum-classic	etc	Ethereum Classic	15.7	-3.77194	95620507
+ethena	ena	Ethena	0.313645	-6.8152	333840075
+jito-staked-sol	jitosol	Jito Staked SOL	194.68	-6.15476	15992328
+aptos	apt	Aptos	3.09	-5.73546	320319235
+aster-2	aster	Aster	1.094	1.36833	702496425
+tether-gold	xaut	Tether Gold	4101.15	0.04593	299782825
+falcon-finance	usdf	Falcon USD	0.999832	0.14413	2286904
+binance-peg-weth	weth	Binance-Peg WETH	3432.11	-3.97514	73773177
+jupiter-perpetuals-liquidity-provider-token	jlp	Jupiter Perpetuals Liquidity Provider Token	5.02	-3.04171	82535465
+ondo-finance	ondo	Ondo	0.652111	-5.0497	77526004
+wrapped-solana	sol	Wrapped SOL	156.92	-6.42065	958918298
+pi-network	pi	Pi Network	0.223077	-3.08352	30392010
+usdtb	usdtb	USDtb	0.999645	-0.19749	285616
+polygon-ecosystem-token	pol	POL (ex-MATIC)	0.172202	-4.87455	79481778
+worldcoin-wld	wld	Worldcoin	0.776656	-5.79019	149486864
+htx-dao	htx	HTX DAO	0.00000183	0.93461	10674041
+kucoin-shares	kcs	KuCoin	13	-0.75425	7791111
+filecoin	fil	Filecoin	2.25	-13.80745	550650616
+official-trump	trump	Official Trump	8.01	-13.94321	971747480
+algorand	algo	Algorand	0.177126	-6.90597	85355434
+hash-2	hash	Provenance Blockchain	0.0304324	1.09955	2573.38
+arbitrum	arb	Arbitrum	0.278362	-8.06608	198517558
+rocket-pool-eth	reth	Rocket Pool ETH	3946.4	-3.66743	35411494
+vechain	vet	VeChain	0.0171586	-1.30729	67246857
+binance-staked-sol	bnsol	Binance Staked SOL	169.4	-6.51473	2830640
+cosmos	atom	Cosmos Hub	2.97	-3.80253	77738210
+gatechain-token	gt	Gate	11.81	-2.20979	4423954
+pax-gold	paxg	PAX Gold	4114.42	0.3094	169875248
+kaspa	kas	Kaspa	0.050212	-5.64483	37947921
+kinetic-staked-hype	khype	Kinetiq Staked HYPE	39.21	-7.31297	30846722
+bfusd	bfusd	BFUSD	0.99963	0.00139	9110657
+binance-bridged-usdc-bnb-smart-chain	usdc	Binance Bridged USDC (BNB Smart Chain)	0.999191	0.04398	319350737
+syrupusdt	syrupusdt	syrupUSDT	1.1	0.08976	17293.79
+kelp-dao-restaked-eth	rseth	Kelp DAO Restaked ETH	3629.15	-3.99267	298214
+wbnb	wbnb	Wrapped BNB	957.61	-3.45981	767150604
+render-token	render	Render	2.37	-7.58356	92710507
+ignition-fbtc	fbtc	Function FBTC	102134	-3.821	265816
+syrupusdc	syrupusdc	syrupUSDC	1.14	0.00778	3924970
+flare-networks	flr	Flare	0.01545492	-5.24382	8408417
+lombard-staked-btc	lbtc	Lombard Staked BTC	102842	-2.89611	12807338
+quant-network	qnt	Quant	82.94	-0.34457	17780443
+sky	sky	Sky	0.052055	-5.93222	14881804
+liquid-staked-ethereum	lseth	Liquid Staked ETH	3710.6	-3.43977	154953
+story-2	ip	Story	3.6	-6.57528	38589963
+sei-network	sei	Sei	0.176508	-6.86395	137898966
+jupiter-exchange-solana	jup	Jupiter	0.339415	-5.1654	48106922
+nexo	nexo	NEXO	1.088	-2.41902	8381688
+global-dollar	usdg	Global Dollar	0.999662	-0.03464	23631813
+xdce-crowd-sale	xdc	XDC Network	0.059835	-3.13631	38731822
+renzo-restaked-eth	ezeth	Renzo Restaked ETH	3653.21	-3.92067	1429370
+ripple-usd	rlusd	Ripple USD	1	0.0308	114106975
+morpho	morpho	Morpho	1.99	-0.39188	25012467
+solv-btc	solvbtc	Solv Protocol BTC	102629	-2.56565	261290
+bonk	bonk	Bonk	0.00001246	-7.07128	150028269
+aerodrome-finance	aero	Aerodrome Finance	1.12	4.58522	258754711
 hashnote-usyc	usyc	Circle USYC	1.11	null	3415.62
-first-digital-usd	fdusd	First Digital USD	0.99779	0.09294	1707137483
-pudgy-penguins	pengu	Pudgy Penguins	0.01500001	-6.96156	178442570
-fetch-ai	fet	Artificial Superintelligence Alliance	0.34297	-0.10949	330788328
-pancakeswap-token	cake	PancakeSwap	2.6	3.92961	282404067
-virtual-protocol	virtual	Virtuals Protocol	1.34	-7.96332	514258993
-fasttoken	ftn	Fasttoken	2	10.06985	22191219
-immutable-x	imx	Immutable	0.437517	-5.06939	56190218
-dash	dash	Dash	68.37	-12.86275	320080811
-mantle-staked-ether	meth	Mantle Staked Ether	3734.3	-2.99615	1716237
-arbitrum-bridged-wbtc-arbitrum-one	wbtc	Arbitrum Bridged WBTC (Arbitrum One)	103042	-2.61869	147688479
-clbtc	clbtc	clBTC	107339	0.9486	3.97
-celestia	tia	Celestia	0.980201	-4.84455	110187890
-rain	rain	Rain	0.0033623	-0.99389	3231922
-optimism	op	Optimism	0.415288	-5.29375	124328636
+first-digital-usd	fdusd	First Digital USD	0.996342	-0.0968	1710940276
+pudgy-penguins	pengu	Pudgy Penguins	0.01476671	-8.59566	177721953
+pancakeswap-token	cake	PancakeSwap	2.57	2.45228	284264981
+fasttoken	ftn	Fasttoken	2.01	10.41965	22298914
+fetch-ai	fet	Artificial Superintelligence Alliance	0.333397	-3.85167	326968826
+virtual-protocol	virtual	Virtuals Protocol	1.32	-11.32237	501254702
+immutable-x	imx	Immutable	0.430326	-7.70139	54728393
+mantle-staked-ether	meth	Mantle Staked Ether	3703.78	-4.07981	1660840
+dash	dash	Dash	67.15	-13.92789	318091411
+arbitrum-bridged-wbtc-arbitrum-one	wbtc	Arbitrum Bridged WBTC (Arbitrum One)	102584	-3.28282	149386327
+clbtc	clbtc	clBTC	107339	0.88749	3.97
+celestia	tia	Celestia	0.964598	-5.70708	108381426
+rain	rain	Rain	0.00334618	-1.39661	3240988
 superstate-short-duration-us-government-securities-fund-ustb	ustb	Superstate Short Duration U.S. Government Securities Fund (USTB)	10.88	0	0
-injective-protocol	inj	Injective	7.86	-4.5674	146315445
 ousg	ousg	OUSG	113.24	0.02041	0
-blockstack	stx	Stacks	0.423814	-2.80314	31054132
-jupiter-staked-sol	jupsol	Jupiter Staked SOL	181.82	-5.2085	8748100
-lido-dao	ldo	Lido DAO	0.81599	-9.03997	139833179
-starknet	strk	Starknet	0.154541	-15.70429	351915691
-stakewise-v3-oseth	oseth	StakeWise Staked ETH	3599.09	-3.29919	4171493
-the-graph	grt	The Graph	0.065143	-4.95454	28531755
-curve-dao-token	crv	Curve DAO	0.481655	-2.44605	226876727
-ondo-us-dollar-yield	usdy	Ondo US Dollar Yield	1.095	-0.31791	3885852
+optimism	op	Optimism	0.409199	-7.12157	127463818
+injective-protocol	inj	Injective	7.65	-6.25328	142721986
+blockstack	stx	Stacks	0.418431	-4.1164	30759054
+jupiter-staked-sol	jupsol	Jupiter Staked SOL	180.6	-6.05986	9089480
+lido-dao	ldo	Lido DAO	0.805192	-6.86028	114978523
+stakewise-v3-oseth	oseth	StakeWise Staked ETH	3576.86	-3.93883	4184302
+ondo-us-dollar-yield	usdy	Ondo US Dollar Yield	1.11	-0.0046	368677
+starknet	strk	Starknet	0.150188	-16.73998	341875534
+the-graph	grt	The Graph	0.064115	-6.15752	28589250
+curve-dao-token	crv	Curve DAO	0.473204	-5.29711	224719640
 cgeth-hashkey-cloud	cgeth.hashkey	cgETH Hashkey Cloud	3284.93	null	10.46
-tezos	xtz	Tezos	0.600159	-4.90808	32224250
-doublezero	2z	DoubleZero	0.181811	-6.74846	19515000
-spx6900	spx	SPX6900	0.677325	-8.36993	26306293
-beldex	bdx	Beldex	0.083151	1.92976	10030031
-tbtc	tbtc	tBTC	102720	-2.89578	14994870
-l2-standard-bridged-weth-base	weth	L2 Standard Bridged WETH (Base)	3454.41	-3.28338	893328700
-iota	iota	IOTA	0.146707	-1.29672	16211457
-soon-2	soon	SOON	2.14	7.68778	88588026
-msol	msol	Marinade Staked SOL	211.42	-5.25736	6569740
-pyth-network	pyth	Pyth Network	0.102835	-5.9631	32788532
-polygon-pos-bridged-dai-polygon-pos	dai	Polygon PoS Bridged DAI (Polygon POS)	0.999737	-0.01337	16169971
-floki	floki	FLOKI	0.00006079	-5.63634	63178564
-kaia	kaia	Kaia	0.099759	-3.35966	40673190
-usdai	usdai	USDai	1.003	-0.0548	4474522
-bridged-usdc-polygon-pos-bridge	usdc.e	Polygon Bridged USDC (Polygon PoS)	0.99971	-0.00913	34605836
-arbitrum-bridged-weth-arbitrum-one	weth	Arbitrum Bridged WETH (Arbitrum One)	3456.81	-3.33918	437732518
-ether-fi-liquid-eth	liquideth	Ether.Fi Liquid ETH	3657.84	-3.50998	12069.41
-ether-fi	ethfi	Ether.fi	0.962562	-4.19458	66634510
-usual-usd	usd0	Usual USD	0.997663	-0.048	233305
-sonic-3	s	Sonic	0.142441	-6.19925	72386953
-ethereum-name-service	ens	Ethereum Name Service	14.16	-2.57046	78905106
-gteth	gteth	GTETH	3458.69	-2.95046	601891
-conflux-token	cfx	Conflux	0.103212	0.33578	176295396
-stader-ethx	ethx	Stader ETHx	3709.23	-3.31538	84224
-decred	dcr	Decred	30.56	-2.00662	20655950
-the-sandbox	sand	The Sandbox	0.200554	-3.85355	53608730
-plasma	xpl	Plasma	0.276717	-14.0278	201398631
-trust-wallet-token	twt	Trust Wallet	1.25	-3.79228	29710937
-mantle-bridged-usdt-mantle	usdt	Mantle Bridged USDT (Mantle)	0.998579	-0.38824	1423273
-syrup	syrup	Maple Finance	0.445203	-5.18077	33091642
-true-usd	tusd	TrueUSD	0.999261	0.06669	16364083
-bitcoin-cash-sv	bsv	Bitcoin SV	24.42	-3.9618	14289162
-newton-project	ab	AB	0.00563787	2.36295	12123094
-ether-fi-staked-eth	eeth	ether.fi Staked ETH	3452.05	-3.0663	20100
-dogwifcoin	wif	dogwifhat	0.471898	-4.76808	139844722
-gala	gala	GALA	0.01008523	-4.46905	74364767
-theta-token	theta	Theta Network	0.469269	-2.77098	20394494
-bittorrent	btt	BitTorrent	4.73431e-7	-0.77111	12192717
-myx-finance	myx	MYX Finance	2.43	-4.71467	34373969
-coinbase-wrapped-staked-eth	cbeth	Coinbase Wrapped Staked ETH	3805.82	-2.99583	9218850
-steakhouse-usdc-morpho-vault	steakusdc	Steakhouse USDC Morpho Vault	1.11	0.00481	0
-sweth	sweth	Swell Ethereum	3784.14	-3.11847	229712
-pendle	pendle	Pendle	2.72	-5.15134	72161987
-jasmycoin	jasmy	JasmyCoin	0.00939291	-5.49563	35982956
-flow	flow	Flow	0.280354	-1.02925	14298235
-vaulta	a	Vaulta	0.282642	-4.24216	47693685
-binance-peg-dogecoin	doge	Binance-Peg Dogecoin	0.174385	-3.59937	4603167
-sbtc-2	sbtc	sBTC	102065	-4.12606	116539
-helium	hnt	Helium	2.36	-5.37966	7324323
-decentraland	mana	Decentraland	0.228995	-2.88499	28286289
-benqi-liquid-staked-avax	savax	BENQI Liquid Staked AVAX	21.36	-4.13134	1546867
-gho	gho	GHO	0.999255	-0.02367	12249231
-bitcoin-avalanche-bridged-btc-b	btc.b	Avalanche Bridged BTC (Avalanche)	103256	-2.39442	58831514
-ark-3	ark	ARK	40.83	1.53856	13117293
-sun-token	sun	Sun Token	0.02246552	-0.28476	18012479
-eutbl	eutbl	Spiko EU T-Bills Money Market Fund	1.21	0.2586	0
-raydium	ray	Raydium	1.52	-2.93851	95342947
-wrapped-hype	whype	Wrapped HYPE	39.35	-5.67359	139125586
-usdb	usdb	USDB	0.993959	-1.35438	995498
-apenft	nft	AINFT	4.03445e-7	0.18882	35644487
-usdd	usdd	USDD	0.999653	-0.01375	13612830
-merlin-chain	merl	Merlin Chain	0.373711	7.35375	30586289
-ribbita-by-virtuals	tibbir	Ribbita by Virtuals	0.387998	10.1924	18619762
-arbitrum-bridged-wrapped-eeth	weeth	Arbitrum Bridged Wrapped eETH (Arbitrum)	3727.99	-2.83699	857504
-concordium	ccd	Concordium	0.03232476	-3.86188	1215179
-mimblewimblecoin	mwc	MimbleWimbleCoin	34.3	-0.99006	143333
-zksync	zk	ZKsync	0.052109	-12.13502	102593232
-polygon-pos-bridged-weth-polygon-pos	weth	Polygon PoS Bridged WETH (Polygon POS)	3454.49	-3.0874	16452044
-neo	neo	NEO	5.25	-1.72587	22120810
-just	jst	JUST	0.03688349	-0.25752	22984942
-astherus-staked-bnb	asbnb	Aster Staked BNB	1019.02	-2.43027	126653
-aethir	ath	Aethir	0.02520391	-3.272	23122072
-dexe	dexe	DeXe	6.23	-1.88904	4903838
-frax-ether	frxeth	Frax Ether	3405.46	-2.97107	1606649
-apecoin	ape	ApeCoin	0.383993	-2.39038	32760130
-zebec-network	zbcn	Zebec Network	0.00367183	6.15264	17491866
-eigenlayer	eigen	EigenCloud (prev. EigenLayer)	0.795417	-5.80684	66107166
-mantle-restaked-eth	cmeth	Mantle Restaked ETH	3735.12	-2.82308	8132114
-olympus	ohm	Olympus	20.83	-2.66561	511447
-walrus-2	wal	Walrus	0.223142	-0.52197	25882519
-unit-bitcoin	ubtc	Unit Bitcoin	103116	-2.50685	106774931
-chiliz	chz	Chiliz	0.0332258	-3.8558	24414971
-swissborg	borg	SwissBorg	0.341068	-1.8806	774353
-ape-and-pepe	apepe	Ape and Pepe	0.00000157	6.25431	24316490
-kinetiq-earn-vault	vkhype	Kinetiq Earn Vault	39.75	-5.87448	236660
-arweave	ar	Arweave	4.99	-11.06143	90020375
-vision-3	vsn	Vision	0.096089	-3.65164	1131282
-gnosis	gno	Gnosis	122.52	-1.83587	6397722
-compound-governance-token	comp	Compound	33.3	-2.67829	22735220
-humanity	h	Humanity	0.175417	3.08088	33255642
-basic-attention-token	bat	Basic Attention	0.214339	-6.72707	37051019
-kinesis-gold	kau	Kinesis Gold	132.25	0.1562	29545630
-axycoin	axyc	AxyCoin	1.57	10.49624	85130
-origintrail	trac	OriginTrail	0.628992	-7.21472	3960942
-binance-peg-busd	busd	Binance-Peg BUSD	0.998402	-0.59106	3686873
-wormhole	w	Wormhole	0.063233	-5.98375	38337186
-fartcoin	fartcoin	Fartcoin	0.309626	-7.18385	113664345
-falcon-finance-ff	ff	Falcon Finance	0.131978	-6.17627	51322733
-instadapp	fluid	Fluid	3.98	-3.00813	14864444
-ethena-staked-ena	sena	Ethena Staked ENA	0.315419	-4.18889	970727
-satoshi-stablecoin	satusd	Satoshi Stablecoin	0.995371	-0.04718	503108
-euro-coin	eurc	EURC	1.16	0.24529	28966315
-zero-gravity	0g	0G	1.37	-8.69368	48462434
-telcoin	tel	Telcoin	0.0030693	-6.53521	1540662
-1inch	1inch	1INCH	0.207879	-1.17171	37934928
-jito-governance-token	jto	Jito	0.727842	-12.3229	44822932
-frax	frax	Legacy Frax Dollar	0.994324	-0.08483	3333917
-ecash	xec	eCash	0.00001448	-3.69328	7204326
-reserve-protocol-eth-plus	eth+	ETHPlus	3645.46	-3.14437	916399
-mocaverse	moca	Moca Network	0.04040423	-1.14576	6966678
-treehouse-eth	teth	Treehouse ETH	4217.78	-3.29773	314135
-wrapped-ether-mantle-bridge	weth	Mantle Bridged WETH (Mantle)	3455.99	-3.64977	3878474
-crvusd	crvusd	crvUSD	0.999112	-0.31308	28645703
-elrond-erd-2	egld	MultiversX	9.65	-3.90639	14502617
-usx	usx	USX	1	0.00373	7705963
-thorchain	rune	THORChain	0.781022	-5.20499	33333697
-havven	snx	Synthetix	0.794972	-7.09462	47297253
+tezos	xtz	Tezos	0.593472	-5.48972	31681020
+doublezero	2z	DoubleZero	0.179463	-8.26762	19153546
+beldex	bdx	Beldex	0.083216	1.78932	9966696
+spx6900	spx	SPX6900	0.660987	-9.59456	26358711
+soon-2	soon	SOON	2.18	9.85165	60905548
+tbtc	tbtc	tBTC	102289	-3.3502	15143710
+l2-standard-bridged-weth-base	weth	L2 Standard Bridged WETH (Base)	3435.97	-3.84841	892495601
+iota	iota	IOTA	0.144173	-2.85306	16004860
+msol	msol	Marinade Staked SOL	209.75	-6.10882	6450181
+polygon-pos-bridged-dai-polygon-pos	dai	Polygon PoS Bridged DAI (Polygon POS)	0.999893	0.00803	66399426
+pyth-network	pyth	Pyth Network	0.101303	-7.85276	32051998
+usdai	usdai	USDai	1.003	-0.02999	4228417
+floki	floki	FLOKI	0.00006003	-6.94681	62340226
+bridged-usdc-polygon-pos-bridge	usdc.e	Polygon Bridged USDC (Polygon PoS)	0.999799	-0.00011	20883134
+kaia	kaia	Kaia	0.098775	-4.20375	40705078
+arbitrum-bridged-weth-arbitrum-one	weth	Arbitrum Bridged WETH (Arbitrum One)	3436.53	-3.94345	394532686
+usual-usd	usd0	Usual USD	0.998217	0.00783	227905
+ether-fi-liquid-eth	liquideth	Ether.Fi Liquid ETH	3642.84	-4.06748	16804.13
+ether-fi	ethfi	Ether.fi	0.951643	-4.55949	64892561
+sonic-3	s	Sonic	0.139956	-7.43222	71949303
+stader-ethx	ethx	Stader ETHx	3689.04	-3.96167	83730
+ethereum-name-service	ens	Ethereum Name Service	13.98	-3.6883	78590505
+gteth	gteth	GTETH	3437.78	-3.79018	606103
+conflux-token	cfx	Conflux	0.101279	-2.23116	179813894
+the-sandbox	sand	The Sandbox	0.19829	-4.72309	51525433
+trust-wallet-token	twt	Trust Wallet	1.24	-4.5806	29204958
+plasma	xpl	Plasma	0.272381	-14.79111	199516860
+decred	dcr	Decred	29.76	-6.51238	20151984
+syrup	syrup	Maple Finance	0.444679	-5.50962	35574619
+mantle-bridged-usdt-mantle	usdt	Mantle Bridged USDT (Mantle)	0.992311	-1.13389	1423891
+true-usd	tusd	TrueUSD	0.998081	0.0026	16144088
+newton-project	ab	AB	0.00566344	2.80793	10356969
+bitcoin-cash-sv	bsv	Bitcoin SV	24.25	-4.29332	14336418
+ether-fi-staked-eth	eeth	ether.fi Staked ETH	3432.74	-3.84892	16275.08
+myx-finance	myx	MYX Finance	2.45	-1.49991	34253508
+dogwifcoin	wif	dogwifhat	0.465365	-5.87134	139605897
+bittorrent	btt	BitTorrent	4.71624e-7	-1.22827	12044588
+gala	gala	GALA	0.00994468	-5.46947	74965833
+steakhouse-usdc-morpho-vault	steakusdc	Steakhouse USDC Morpho Vault	1.11	0.01632	0
+theta-token	theta	Theta Network	0.456292	-5.79608	21284344
+coinbase-wrapped-staked-eth	cbeth	Coinbase Wrapped Staked ETH	3784.32	-3.7459	11157147
+sweth	sweth	Swell Ethereum	3764.33	-3.63488	225110
+pendle	pendle	Pendle	2.69	-5.89264	72394967
+flow	flow	Flow	0.27708	-2.241	14382884
+jasmycoin	jasmy	JasmyCoin	0.00924632	-6.54189	35245360
+vaulta	a	Vaulta	0.277548	-6.40958	47988530
+sbtc-2	sbtc	sBTC	101447	-4.94436	115985
+binance-peg-dogecoin	doge	Binance-Peg Dogecoin	0.173097	-4.04593	4660761
+helium	hnt	Helium	2.35	-5.95248	7290133
+gho	gho	GHO	0.999248	0.00345	12288636
+ark-3	ark	ARK	40.62	1.05352	13034005
+benqi-liquid-staked-avax	savax	BENQI Liquid Staked AVAX	21.14	-5.26754	1653922
+bitcoin-avalanche-bridged-btc-b	btc.b	Avalanche Bridged BTC (Avalanche)	102934	-2.96626	57926159
+decentraland	mana	Decentraland	0.225398	-4.19591	28208832
+sun-token	sun	Sun Token	0.02243861	-0.24384	19770780
+eutbl	eutbl	Spiko EU T-Bills Money Market Fund	1.21	0.18619	0
+usdb	usdb	USDB	0.98974	-0.52229	998818
+wrapped-hype	whype	Wrapped HYPE	39.16	-7.10703	154806314
+raydium	ray	Raydium	1.5	-4.71648	99345068
+usdd	usdd	USDD	0.999659	-0.0028	14180697
+apenft	nft	AINFT	4.0207e-7	0.04765	36089406
+merlin-chain	merl	Merlin Chain	0.372732	5.62745	30300916
+arbitrum-bridged-wrapped-eeth	weeth	Arbitrum Bridged Wrapped eETH (Arbitrum)	3704.94	-3.88713	848332
+concordium	ccd	Concordium	0.03221278	-4.21125	1200387
+mimblewimblecoin	mwc	MimbleWimbleCoin	34.31	-2.14635	134135
+ribbita-by-virtuals	tibbir	Ribbita by Virtuals	0.374715	6.43629	18300542
+polygon-pos-bridged-weth-polygon-pos	weth	Polygon PoS Bridged WETH (Polygon POS)	3438.88	-3.82037	15859936
+zksync	zk	ZKsync	0.051063	-13.84966	102249399
+neo	neo	NEO	5.18	-3.03622	22449447
+just	jst	JUST	0.03679676	-0.3329	23560891
+astherus-staked-bnb	asbnb	Aster Staked BNB	1013.46	-3.33827	122456
+aethir	ath	Aethir	0.02488157	-6.57209	22176005
+dexe	dexe	DeXe	6.17	-2.72064	5317239
+frax-ether	frxeth	Frax Ether	3385.54	-3.86236	881084
+apecoin	ape	ApeCoin	0.377673	-4.56441	33326807
+olympus	ohm	Olympus	20.91	-2.16833	516303
+mantle-restaked-eth	cmeth	Mantle Restaked ETH	3700.25	-4.04943	8251505
+eigenlayer	eigen	EigenCloud (prev. EigenLayer)	0.77668	-7.64947	62017513
+zebec-network	zbcn	Zebec Network	0.00355602	2.20477	17558158
+unit-bitcoin	ubtc	Unit Bitcoin	102767	-3.22314	105539387
+walrus-2	wal	Walrus	0.222718	-0.68664	26271401
+swissborg	borg	SwissBorg	0.339417	-2.49494	783615
+chiliz	chz	Chiliz	0.03278594	-5.01929	24561708
+vision-3	vsn	Vision	0.098105	-1.73654	1608841
+kinetiq-earn-vault	vkhype	Kinetiq Earn Vault	39.48	-7.58436	235553
+ape-and-pepe	apepe	Ape and Pepe	0.00000154	4.48446	26258508
+arweave	ar	Arweave	4.89	-14.66619	86820470
+compound-governance-token	comp	Compound	32.99	-4.4564	22634134
+basic-attention-token	bat	Basic Attention	0.212933	-6.77722	36671672
+gnosis	gno	Gnosis	120.25	-4.28923	7323155
+kinesis-gold	kau	Kinesis Gold	132.69	0.43519	29603996
+axycoin	axyc	AxyCoin	1.58	10.77936	87830
+origintrail	trac	OriginTrail	0.623044	-7.75415	2935016
+humanity	h	Humanity	0.170617	2.58583	27091614
+binance-peg-busd	busd	Binance-Peg BUSD	0.995001	-1.1423	5297676
+instadapp	fluid	Fluid	3.93	-3.94584	14846803
+wormhole	w	Wormhole	0.062048	-7.84521	38495711
+ethena-staked-ena	sena	Ethena Staked ENA	0.315221	-7.51589	979246
+fartcoin	fartcoin	Fartcoin	0.301302	-10.00364	115502438
+falcon-finance-ff	ff	Falcon Finance	0.128428	-7.36886	49985240
+satoshi-stablecoin	satusd	Satoshi Stablecoin	0.995249	-0.06222	463751
+euro-coin	eurc	EURC	1.16	0.20999	31474617
+telcoin	tel	Telcoin	0.00305028	-8.32853	1507754
+frax	frax	Legacy Frax Dollar	0.994773	-0.04385	3392508
+jito-governance-token	jto	Jito	0.717452	-11.35868	42785475
+1inch	1inch	1INCH	0.204372	-3.38821	37741445
+reserve-protocol-eth-plus	eth+	ETHPlus	3629.1	-3.80657	913402
+zero-gravity	0g	0G	1.34	-10.94018	47636099
+ecash	xec	eCash	0.0000143	-4.76865	7302776
+mocaverse	moca	Moca Network	0.03978615	-3.40851	6891928
+treehouse-eth	teth	Treehouse ETH	4198.51	-3.83383	312700
+wrapped-ether-mantle-bridge	weth	Mantle Bridged WETH (Mantle)	3424.04	-4.03714	3916061
+crvusd	crvusd	crvUSD	0.998085	-0.21769	29395727
+usx	usx	USX	1	0.00699	7670639
+elrond-erd-2	egld	MultiversX	9.49	-5.30809	14558640
 lorenzo-wrapped-bitcoin	enzobtc	Lorenzo Wrapped Bitcoin	110649	-0.53341	3.14
-drift-staked-sol	dsol	Drift Staked SOL	182.64	-4.85582	111610
-reserve-rights-token	rsr	Reserve Rights	0.00442962	-4.72819	22167157
-zora	zora	Zora	0.060112	-3.52404	45888104
-loaded-lions	lion	Loaded Lions	0.00877184	-4.31739	930539
-solv-protocol-solvbtc-bbn	xsolvbtc	Solv Protocol Staked BTC	102920	-1.23844	42086
-polygon-bridged-wbtc-polygon-pos	wbtc	Polygon Bridged WBTC (Polygon POS)	103095	-2.47141	7031474
-wemix-token	wemix	WEMIX	0.558014	-1.01055	4542345
-dydx-chain	dydx	dYdX	0.317219	-5.99095	21254742
-livepeer	lpt	Livepeer	5.47	3.92556	42495765
-savings-dai	sdai	Savings Dai	1.17	-0.05988	101030
-chain-2	xcn	Onyxcoin	0.00676112	-2.40416	14682118
-cheems-token	cheems	Cheems Token	0.0000012	-2.41057	1190450
-undeads-games	uds	Undeads Games	2.37	0.17295	1682412
-staked-frax-ether	sfrxeth	Staked Frax Ether	3879.18	-3.07011	167690
-bybit-staked-sol	bbsol	Bybit Staked SOL	176.67	-5.48731	1832723
-zano	zano	Zano	15.97	2.78478	1929815
-ibc-bridged-usdc	usdc.n	Noble USDC	0.988141	-2.69255	2388974
+thorchain	rune	THORChain	0.776396	-6.22029	42058674
+havven	snx	Synthetix	0.783366	-8.27728	47089222
+drift-staked-sol	dsol	Drift Staked SOL	181.13	-6.20488	63423
+solv-protocol-solvbtc-bbn	xsolvbtc	Solv Protocol Staked BTC	102893	-1.23912	42091
+reserve-rights-token	rsr	Reserve Rights	0.00436521	-5.79214	22006226
+zora	zora	Zora	0.059724	-3.52841	52782809
+loaded-lions	lion	Loaded Lions	0.00870129	-5.19085	948634
+polygon-bridged-wbtc-polygon-pos	wbtc	Polygon Bridged WBTC (Polygon POS)	102744	-3.07611	6784288
+wemix-token	wemix	WEMIX	0.558261	-0.74356	4325655
+dydx-chain	dydx	dYdX	0.313023	-7.63289	21029840
+livepeer	lpt	Livepeer	5.3	1.38105	40963771
+savings-dai	sdai	Savings Dai	1.17	-0.02096	119162
+cheems-token	cheems	Cheems Token	0.0000012	-2.23249	1395423
+undeads-games	uds	Undeads Games	2.38	0.27163	1530391
+staked-frax-ether	sfrxeth	Staked Frax Ether	3862.64	-3.80487	81153
+chain-2	xcn	Onyxcoin	0.00668421	-3.1476	14551003
+zano	zano	Zano	15.88	2.43957	2115493
+bybit-staked-sol	bbsol	Bybit Staked SOL	174.95	-6.62271	1286743
+ibc-bridged-usdc	usdc.n	Noble USDC	0.972541	-4.24341	2395149
 fidelity-digital-interest-token	fdit	Fidelity Digital Interest Token	1	0	0
-atomone	atone	AtomOne	1.91	-0.77546	127190
-resolv-usr	usr	Resolv USR	1	0.05584	3760061
-compound-wrapped-btc	cwbtc	cWBTC	2074.81	-2.43714	0
-zencash	zen	Horizen	13.17	-3.73327	148375165
-axie-infinity	axs	Axie Infinity	1.38	-5.03605	30396426
-golem	glm	Golem	0.225902	-1.31116	48449133
-wrapped-avax	wavax	Wrapped AVAX	17.32	-4.14245	273060447
+atomone	atone	AtomOne	1.91	-1.12755	139252
+resolv-usr	usr	Resolv USR	0.999887	0.06587	4515811
+compound-wrapped-btc	cwbtc	cWBTC	2064.8	-3.19254	0
+zencash	zen	Horizen	12.92	-5.16845	146305312
+axie-infinity	axs	Axie Infinity	1.36	-6.73176	30632907
 blockchain-capital	bcap	Blockchain Capital	24.62	0	0
-based-brett	brett	Brett	0.02261832	-8.34348	25298707
-beam-2	beam	Beam	0.00434053	-4.9796	9004696
-coredaoorg	core	Core	0.21784	0.73911	30665804
-amp-token	amp	Amp	0.00269517	5.38715	25802944
-usda-2	usda	USDa	0.993528	0.07999	252.53
-openeden-open-dollar	usdo	OpenEden OpenDollar	0.999567	-0.02834	3098.84
-toshi	toshi	Toshi	0.00050985	-3.94224	20120369
-berachain-bera	bera	Berachain	1.62	-6.10557	25735903
-railgun	rail	Railgun	3.71	-12.22728	3837897
-creditcoin-2	ctc	Creditcoin	0.413686	-3.58635	9275911
-meteora	met	Meteora	0.430669	17.67124	120735258
-aioz-network	aioz	AIOZ Network	0.169915	0.03854	18946874
-kaito	kaito	KAITO	0.84699	-5.4154	13976659
-ronin	ron	Ronin	0.283261	-6.10813	4614449
-qtum	qtum	Qtum	1.93	-1.06984	21396504
-btse-token	btse	BTSE Token	1.25	1.3007	2319258
-midas-msyrupusdp	msyrupusdp	Midas msyrupUSDp	1.011	0	0
-kusama	ksm	Kusama	11.6	-7.50634	16098756
-mx-token	mx	MX	2.16	-1.32073	21036657
-linea	linea	Linea	0.01259626	-2.32243	81509852
-ai-companions	aic	AI Companions	0.198639	6.18198	4381079
-reallink	real	RealLink	0.066718	-4.45814	21595852
-nano	xno	Nano	1.49	23.62557	18314598
-compounding-open-dollar	cusdo	Compounding OpenDollar	1.031	-0.07309	1485701
-terra-luna	lunc	Terra Luna Classic	0.00003603	-4.09837	11181721
-kamino	kmno	Kamino	0.061167	-3.55864	18694418
-superfarm	super	SuperVerse	0.307034	-5.06023	9836447
-resolv-wstusr	wstusr	Resolv wstUSR	1.12	0.0076	1523499
-cap-usd	cusd	Cap USD	0.999878	-0.1202	76383
-universal-btc	unibtc	Universal BTC	102494	-2.77451	191693
-aia	aia	DeAgentAI	1.92	-24.89337	40109942
-legacy-token	lgct	Legacy Token	1.8	-0.22686	4703429
-kraken-wrapped-btc	kbtc	Kraken Wrapped BTC	103454	-2.29407	353146
-kinesis-silver	kag	Kinesis Silver	50.98	0.95445	505095
+golem	glm	Golem	0.222481	-5.68258	44064444
+wrapped-avax	wavax	Wrapped AVAX	17.15	-5.17452	277817846
+based-brett	brett	Brett	0.02239108	-10.17097	26027286
+usda-2	usda	USDa	0.992613	-0.00815	29.18
+beam-2	beam	Beam	0.00428125	-6.39762	9098693
+openeden-open-dollar	usdo	OpenEden OpenDollar	0.999567	0.06146	3098.84
+coredaoorg	core	Core	0.214904	-0.90098	27165411
+amp-token	amp	Amp	0.00259136	1.22555	26676209
+railgun	rail	Railgun	3.74	-11.54215	3806755
+toshi	toshi	Toshi	0.00050782	-3.98864	20154092
+berachain-bera	bera	Berachain	1.59	-7.55457	24505342
+meteora	met	Meteora	0.4352	17.44513	124381531
+creditcoin-2	ctc	Creditcoin	0.408812	-4.70821	9230328
+btse-token	btse	BTSE Token	1.25	1.03836	2325763
+ronin	ron	Ronin	0.280755	-6.54849	4493706
+midas-msyrupusdp	msyrupusdp	Midas msyrupUSDp	1.011	0.03305	0
+kaito	kaito	KAITO	0.830891	-7.28465	13518084
+nano	xno	Nano	1.51	25.60303	19541923
+qtum	qtum	Qtum	1.89	-2.90618	21741530
+aioz-network	aioz	AIOZ Network	0.165437	-3.25034	18732671
+ai-companions	aic	AI Companions	0.199635	5.00401	2431230
+mx-token	mx	MX	2.15	-1.76723	24734613
+kusama	ksm	Kusama	11.46	-8.46944	15252417
+compounding-open-dollar	cusdo	Compounding OpenDollar	1.033	0.05007	1488817
+reallink	real	RealLink	0.066342	-5.30103	21578046
+resolv-wstusr	wstusr	Resolv wstUSR	1.12	-0.01967	1233578
+terra-luna	lunc	Terra Luna Classic	0.00003546	-5.3523	11409310
+kamino	kmno	Kamino	0.060451	-4.69014	18820910
+cap-usd	cusd	Cap USD	1.001	-0.01347	79847
+linea	linea	Linea	0.01229307	-5.05187	82506200
+superfarm	super	SuperVerse	0.301646	-6.44367	9861913
+legacy-token	lgct	Legacy Token	1.8	-0.30321	4883798
+universal-btc	unibtc	Universal BTC	102227	-3.12258	156033
+kinesis-silver	kag	Kinesis Silver	51.17	0.70228	502963
+aia	aia	DeAgentAI	1.92	-26.77381	39806796
+kraken-wrapped-btc	kbtc	Kraken Wrapped BTC	102908	-3.15996	497342
 tradable-na-rent-financing-platform-sstn	pc0000031	Tradable NA Rent Financing Platform SSTN	1	0	0
-standx-dusd	dusd	StandX DUSD	0.998211	-0.38487	20575463
-sahara-ai	sahara	Sahara AI	0.078366	-0.92256	20085754
-sosovalue	soso	SoSoValue	0.676327	-6.50379	10065877
-akash-network	akt	Akash Network	0.648667	-4.99714	7283833
-useless-3	useless	Useless Coin	0.182724	-13.75452	43216944
-lombard-protocol	bard	Lombard	0.809344	1.96638	25589172
-meta-2-2	meta	MetaDAO	8.14	35.33687	8728779
-ecoreal-estate	ecoreal	Ecoreal Estate	0.318916	2.05288	501419
-eos	eos	EOS	0.282779	-3.93682	421528
-mina-protocol	mina	Mina Protocol	0.143072	-11.20731	33641304
-cronos-bridged-usdc-cronos	usdc	Cronos Bridged USDC (Cronos)	0.998231	-0.26812	1474425
+standx-dusd	dusd	StandX DUSD	0.997935	-0.27396	20441423
+sahara-ai	sahara	Sahara AI	0.078147	-0.39798	20086221
+sosovalue	soso	SoSoValue	0.672263	-7.10558	10132987
+ecoreal-estate	ecoreal	Ecoreal Estate	0.32274	2.86234	499566
+akash-network	akt	Akash Network	0.644017	-6.21435	7173304
+lombard-protocol	bard	Lombard	0.800379	1.7369	25689605
+cronos-bridged-usdc-cronos	usdc	Cronos Bridged USDC (Cronos)	1	-0.1424	1521626
+useless-3	useless	Useless Coin	0.177588	-15.14804	43758817
+mina-protocol	mina	Mina Protocol	0.141013	-12.6661	33261162
 sky-coin	xso	Sky Coin	0.0001778	null	9.29
-chainopera-ai	coai	ChainOpera AI	0.892975	-17.30917	41906658
-layerzero	zro	LayerZero	1.58	-3.51583	50555887
-axelar	axl	Axelar	0.164087	-3.20383	9229073
-safepal	sfp	SafePal	0.348761	-3.5399	3087227
-four	form	Four	0.455533	-1.14654	22001645
-binance-peg-sol	sol	Binance-Peg SOL	157.81	-5.61	5746269
-slash-vision-labs	svl	Slash Vision Labs	0.03508511	-3.07681	615686
-0x	zrx	0x Protocol	0.203691	-5.04567	20625873
-convex-finance	cvx	Convex Finance	2.09	0.4954	27840393
-arkham	arkm	Arkham	0.33268	-5.32016	39294392
-prometeus	prom	Prom	9.38	3.47091	2786861
-dog-go-to-the-moon-rune	dog	Dog (Bitcoin)	0.00170754	-0.591	6555065
-origin-ether	oeth	Origin Ether	3448.06	-3.36394	863811
-bitmart-token	bmx	BitMart	0.49923	-0.26135	5860930
-movement	move	Movement	0.060299	-6.88121	32769466
-rekt-4	rekt	Rekt	4e-7	-6.43288	1804619
-deep	deep	DeepBook	0.066923	-3.82875	18019926
-astherus-usdf	usdf	Aster USDF	0.999448	0.08657	570352
-bianrensheng	币安人生	币安人生 (BinanceLife)	0.1647	-6.35244	12853429
-theta-fuel	tfuel	Theta Fuel	0.02310977	-1.39622	1854385
-yearn-finance	yfi	yearn.finance	4836.65	-2.42046	18492266
-ravencoin	rvn	Ravencoin	0.01030835	-1.80046	10947493
-gas	gas	Gas	2.5	0.20275	9909361
-bnb48-club-token	koge	KOGE	47.99	0.00933	132033534
-kava	kava	Kava	0.149398	-8.2093	21112096
-digibyte	dgb	DigiByte	0.00897694	-7.75596	10194070
-giggle-fund	giggle	Giggle Fund	158.22	1.76914	151851149
-nxm	nxm	Nexus Mutual	82.3	-4.3112	0
-keeta	kta	Keeta	0.3616	-10.72749	5830362
-nervos-network	ckb	Nervos Network	0.00327813	-3.29079	9507581
-tokenize-xchange	tkx	Tokenize Xchange	1.95	-2.08422	4053.04
-build-on	b	BUILDon	0.155217	2.13774	8493479
-midas-mf-one	mf-one	Midas mF-ONE	1.053	0.10037	0
-oasis-network	rose	Oasis	0.02064169	-8.08627	13614009
-infinifi-usd	iusd	InfiniFi USD	0.999667	-0.01604	6428.56
-aleo	aleo	ALEO	0.23799	1.36488	5223981
-shuffle-2	shfl	Shuffle	0.435043	-2.84038	498082
-uchain-2	ucn	UCHAIN	1509.48	0.62945	15264667
-bridged-usd-coin-starkgate	usdc	StarkGate Bridged USDC (Starknet)	0.999784	-0.00327	18078410
-plume	plume	Plume	0.04775831	-11.55351	21835629
-gusd	gusd	GUSD	0.999752	0.00228	9081669
-zilliqa	zil	Zilliqa	0.00764986	-2.91248	28612234
-snek	snek	Snek	0.00200221	-6.47088	3979190
-phantom-staked-sol	psol	Phantom Staked SOL	164.72	-5.28453	595611
-ether-fi-staked-btc	ebtc	Ether.fi Staked BTC	102827	-3.16645	397117
-popcat	popcat	Popcat	0.151754	2.9153	46707303
-conscious-token	conscious	Conscious Token	0.316769	-2.17316	1664691
-susdai	susdai	Staked USDai	1.047	0.04906	319768
-polygon-bridged-weeth-katana	weeth	Polygon Bridged weETH (Katana)	3730.56	-3.04874	1298819
-gmt-token	gomining	GoMining Token	0.362078	0.17623	10504651
-non-playable-coin	npc	Non-Playable Coin	0.01812892	-7.86149	14342730
-flare-bridged-xrp-flare	fxrp	Flare Bridged XRP (Flare)	2.42	-5.39703	2875069
-baby-doge-coin	babydoge	Baby Doge Coin	8.40512e-10	-4.00047	6970618
-super-oeth	superoeth	Super OETH	3447.68	-3.26665	21027
-grass	grass	Grass	0.322871	-9.28182	19599223
-river	river	River	7.35	3.61401	20556487
-kite-2	kite	Kite	0.080092	-6.25999	204200481
-stasis-eurs	eurs	STASIS EURO	1.15	0.92321	116114
-saros-finance	saros	Saros	0.054379	-2.96069	4073934
+eos	eos	EOS	0.27849	-5.75549	438121
+prometeus	prom	Prom	9.6	6.17373	3567343
+axelar	axl	Axelar	0.162307	-4.9189	9622411
+safepal	sfp	SafePal	0.346428	-4.07278	3114349
+chainopera-ai	coai	ChainOpera AI	0.877541	-17.94579	42468213
+binance-peg-sol	sol	Binance-Peg SOL	156.72	-6.77001	5652535
+slash-vision-labs	svl	Slash Vision Labs	0.03483469	-3.56216	607809
+0x	zrx	0x Protocol	0.202568	-5.73387	20901746
+four	form	Four	0.446448	-3.6838	21935314
+dog-go-to-the-moon-rune	dog	Dog (Bitcoin)	0.00170154	-1.83185	6394328
+origin-ether	oeth	Origin Ether	3434.65	-3.98109	877850
+bitmart-token	bmx	BitMart	0.499109	-0.33584	5896930
+convex-finance	cvx	Convex Finance	2.06	-2.14356	28125747
+layerzero	zro	LayerZero	1.51	-7.73753	53882993
+rekt-4	rekt	Rekt	3.98624e-7	-7.76881	1725821
+arkham	arkm	Arkham	0.325948	-7.21875	38205049
+movement	move	Movement	0.059391	-10.27748	31192083
+astherus-usdf	usdf	Aster USDF	0.998246	-0.01661	533763
+deep	deep	DeepBook	0.065979	-5.21735	18240611
+theta-fuel	tfuel	Theta Fuel	0.02301984	-1.64238	1709150
+yearn-finance	yfi	yearn.finance	4820.24	-2.92098	18614666
+bianrensheng	币安人生	币安人生 (BinanceLife)	0.161927	-7.78454	14022336
+bnb48-club-token	koge	KOGE	47.9	-0.18246	386291098
+kava	kava	Kava	0.14814	-11.31485	21493676
+ravencoin	rvn	Ravencoin	0.01010483	-3.93099	11258964
+gas	gas	Gas	2.45	-2.01092	10018666
+digibyte	dgb	DigiByte	0.00880631	-15.17767	7955086
+nxm	nxm	Nexus Mutual	81.75	-5.05336	0
+giggle-fund	giggle	Giggle Fund	156.62	-0.09799	150126748
+meta-2-2	meta	MetaDAO	7.17	12.74451	9040502
+build-on	b	BUILDon	0.155807	2.97404	8544454
+infinifi-usd	iusd	InfiniFi USD	0.999867	0.00539	5804.59
+midas-mf-one	mf-one	Midas mF-ONE	1.053	0.13662	0
+tokenize-xchange	tkx	Tokenize Xchange	1.94	-2.96313	4211.08
+nervos-network	ckb	Nervos Network	0.00323697	-4.30097	9577794
+keeta	kta	Keeta	0.352792	-13.92612	4977057
+aleo	aleo	ALEO	0.238734	2.68766	5896893
+shuffle-2	shfl	Shuffle	0.442064	-1.371	513245
+oasis-network	rose	Oasis	0.02020099	-9.82342	13395258
+uchain-2	ucn	UCHAIN	1509.92	0.65312	14923858
+bridged-usd-coin-starkgate	usdc	StarkGate Bridged USDC (Starknet)	0.99983	-0.00812	17641838
+gusd	gusd	GUSD	1	0.0399	8936296
+ether-fi-staked-btc	ebtc	Ether.fi Staked BTC	102594	-3.64594	396215
+snek	snek	Snek	0.00198994	-7.02992	3991666
+phantom-staked-sol	psol	Phantom Staked SOL	163.47	-6.5617	509447
+susdai	susdai	Staked USDai	1.047	0.03154	310172
+conscious-token	conscious	Conscious Token	0.314177	-3.48588	1603845
+polygon-bridged-weeth-katana	weeth	Polygon Bridged weETH (Katana)	3715.95	-3.65129	1293731
+popcat	popcat	Popcat	0.150574	1.76489	47987206
+zilliqa	zil	Zilliqa	0.00747144	-5.40067	28835492
+plume	plume	Plume	0.04663679	-14.49501	20629166
+gmt-token	gomining	GoMining Token	0.359859	-0.42514	10484066
+non-playable-coin	npc	Non-Playable Coin	0.01804699	-10.50295	14376672
+super-oeth	superoeth	Super OETH	3434.47	-3.83805	23110
+river	river	River	7.34	2.00284	20492362
+flare-bridged-xrp-flare	fxrp	Flare Bridged XRP (Flare)	2.41	-5.46411	2482519
+baby-doge-coin	babydoge	Baby Doge Coin	8.30485e-10	-5.09686	6722754
+stasis-eurs	eurs	STASIS EURO	1.15	0.2791	116122
+kite-2	kite	Kite	0.079358	-6.5186	204897440
 spiko-us-t-bills-money-market-fund	ustbl	Spiko US T-Bills Money Market Fund	1.064	0	0
-mog-coin	mog	Mog Coin	3.64494e-7	-4.99982	11035742
-cat-in-a-dogs-world	mew	cat in a dogs world	0.00159197	-4.55377	22701178
-mag7-ssi	mag7.ssi	MAG7.ssi	0.838474	-2.49213	1675231
-turbo	turbo	Turbo	0.00204565	-6.12118	15352070
-minidoge-5	minidoge	Minidoge	2.00365e-7	-2.60439	3819635
-unit-pump	upump	Unit Pump	0.0043962	0.82888	9440493
-pirate-chain	arrr	Pirate Chain	0.716095	-8.42665	745041
-ultima	ultima	Ultima	3569.24	0.37097	13318231
-celo	celo	Celo	0.23801	-3.61475	17653065
-wrapped-aave-ethereum-usdc	waethusdc	Wrapped Aave Ethereum USDC	1.15	-0.01792	2493179
-safe	safe	Safe	0.210405	-0.00836	8320335
-bio-protocol	bio	Bio Protocol	0.077549	-7.03375	66740670
-agora-dollar	ausd	AUSD	0.999416	-0.04813	26624575
-yieldfi-ytoken	yusd	YieldFi yToken	1.13	0.03159	20404
-threshold-network-token	t	Threshold Network	0.01258867	-2.18773	7043707
-theo-short-duration-us-treasury-fund	thbill	Theo Short Duration US Treasury Fund	1.006	-0.4731	795226
-venom	venom	Venom	0.064029	-1.237	171592
-stargate-finance	stg	Stargate Finance	0.139046	-3.16363	6324282
-avantis	avnt	Avantis	0.521531	-2.77378	48579585
-agentfun-ai	agentfun	AgentFun.AI	1.33	-5.56464	1228.21
-crypto-com-staked-eth	cdceth	Crypto.com Staked ETH	3658.46	-3.16412	385663
-drift-protocol	drift	Drift Protocol	0.342732	-6.29616	15569707
+grass	grass	Grass	0.318657	-11.06981	19404420
+saros-finance	saros	Saros	0.053904	-3.39443	4210084
+minidoge-5	minidoge	Minidoge	2.01943e-7	-2.21625	3840432
+pirate-chain	arrr	Pirate Chain	0.719156	-10.67988	742650
+mag7-ssi	mag7.ssi	MAG7.ssi	0.835972	-3.08484	1683278
+ultima	ultima	Ultima	3564.94	0.59796	13239508
+mog-coin	mog	Mog Coin	3.58702e-7	-6.10962	11155829
+cat-in-a-dogs-world	mew	cat in a dogs world	0.00157175	-6.05905	22712423
+wrapped-aave-ethereum-usdc	waethusdc	Wrapped Aave Ethereum USDC	1.15	-0.0182	2754513
+turbo	turbo	Turbo	0.00201224	-7.34309	15378632
+unit-pump	upump	Unit Pump	0.00430895	-3.126	9205482
+celo	celo	Celo	0.234347	-6.65736	17201223
+agora-dollar	ausd	AUSD	0.999583	-0.03523	25578908
+safe	safe	Safe	0.207217	-2.0402	8499126
+yieldfi-ytoken	yusd	YieldFi yToken	1.13	0.03203	20364
+theo-short-duration-us-treasury-fund	thbill	Theo Short Duration US Treasury Fund	1.011	-0.24641	2360471
+venom	venom	Venom	0.064028	-1.25441	172676
+bio-protocol	bio	Bio Protocol	0.076275	-8.31809	67267850
+threshold-network-token	t	Threshold Network	0.01244913	-3.58471	7052177
+crypto-com-staked-eth	cdceth	Crypto.com Staked ETH	3643.09	-3.64269	383706
+stargate-finance	stg	Stargate Finance	0.136592	-4.82849	6553407
 bedrock-btc	brbtc	Bedrock BTC	116166	0	0
-infrared-bera	ibera	Infrared Bera	1.66	-5.40537	177156
-wefi	wfi	WeFi	1.77	-2.21885	2523675
-recall	recall	Recall	0.197847	-4.39268	107913732
-astar	astr	Astar	0.01566542	0.06442	11158439
-apollo-diversified-credit-securitize-fund	acred	Apollo Diversified Credit Securitize Fund	1066.9	0.05044	0
-coinex-token	cet	CoinEx	0.04922822	-1.13432	138916
-stp-network	awe	AWE Network	0.065488	-1.3382	5163348
-velo	velo	Velo	0.00713689	-1.68603	18199144
-dola-usd	dola	DOLA	0.995038	-0.03625	1230319
-ore	ore	Ore	303.9	-24.71692	31559635
-chia	xch	Chia	8.45	-4.95329	6505378
-proton	xpr	XPR Network	0.00435104	-4.848	2833350
-qubic-network	qubic	Qubic	9.73672e-7	-5.25376	3363778
-sui-bridged-wbtc-sui	wbtc	Sui Bridged WBTC (Sui)	102893	-2.80035	6006890
-wrapped-aave-ethereum-weth	waethweth	Wrapped Aave Ethereum WETH	3647.12	-3.04949	2584272
-zetachain	zeta	ZetaChain	0.107735	-3.1005	10899920
-blur	blur	Blur	0.04635645	-3.29632	15210035
-wrapped-aave-ethereum-usdt	waethusdt	Wrapped Aave Ethereum USDT	1.15	-0.00431	4426494
-restaking-vault-eth	rsteth	Restaking Vault ETH	4339.51	0.68745	895.45
-rollbit-coin	rlb	Rollbit Coin	0.064052	-2.04817	317164
-metal-blockchain	metal	Metal Blockchain	0.232367	-7.60565	1122988
-allora	allo	Allora	0.583966	-54.17535	234754634
-melania-meme	melania	Melania Meme	0.139506	-29.60436	68988768
-ozone-chain	ozo	Ozone Chain	0.130579	-0.26156	231594
-tdccp	tdccp	TDCCP	0.182484	-4.7608	109278
-bitkub-coin	kub	KUB Coin	1.31	-0.66448	298874
-verge	xvg	Verge	0.00699118	-7.93469	10874516
-peanut-the-squirrel	pnut	Peanut the Squirrel	0.115286	-6.80072	23737933
-vethor-token	vtho	VeThor	0.00119883	0.45458	4986190
-gaib-ai-dollar-alpha-usdc	aidausdc	Gaib AI Dollar Alpha USDC	0.998858	-0.10978	63128
-compound-ether	ceth	cETH	69.42	-3.2718	1.4
-unibase	ub	Unibase	0.04543372	-6.06394	23546590
-anzen-usdz	usdz	Anzen USDz	0.985259	-0.57004	67834
-siacoin	sc	Siacoin	0.00200945	-1.22303	5163074
-holotoken	hot	Holo	0.00063107	-5.89135	6854473
-alchemist-ai	alch	Alchemist AI	0.131403	5.21993	46857743
-avalanche-bridged-weth-avalanche	weth	Avalanche Bridged WETH (Avalanche)	3460.65	-2.9097	34839915
-zignaly	zig	ZIGChain	0.079302	-4.59667	2923457
-succinct	prove	Succinct	0.566718	-5.03332	21535226
-usda-3	usda	USDA	0.99533	-0.27488	39173485
-cow-protocol	cow	CoW Protocol	0.210741	-1.41273	21717104
-frax-usd	frxusd	Frax USD	0.999361	-0.22668	2496737
+avantis	avnt	Avantis	0.512017	-4.62682	48474554
+agentfun-ai	agentfun	AgentFun.AI	1.32	-6.44168	1212.79
+drift-protocol	drift	Drift Protocol	0.336944	-7.93783	15774240
+wefi	wfi	WeFi	1.76	-2.79832	2533821
+apollo-diversified-credit-securitize-fund	acred	Apollo Diversified Credit Securitize Fund	1066.99	0.05695	0
+recall	recall	Recall	0.195957	-5.16526	121377742
+infrared-bera	ibera	Infrared Bera	1.64	-6.5555	247266
+coinex-token	cet	CoinEx	0.04915523	-1.33148	138927
+astar	astr	Astar	0.01543935	-1.67319	11139225
+stp-network	awe	AWE Network	0.064695	-2.88384	5474947
+dola-usd	dola	DOLA	0.994887	-0.03271	1177292
+velo	velo	Velo	0.0071007	-1.96991	18217820
+proton	xpr	XPR Network	0.0043457	-4.03126	2783070
+qubic-network	qubic	Qubic	9.63302e-7	-7.68431	3361084
+sui-bridged-wbtc-sui	wbtc	Sui Bridged WBTC (Sui)	102445	-3.37214	6047594
+wrapped-aave-ethereum-weth	waethweth	Wrapped Aave Ethereum WETH	3624.39	-3.88889	2594958
+wrapped-aave-ethereum-usdt	waethusdt	Wrapped Aave Ethereum USDT	1.15	-0.00555	4297912
+restaking-vault-eth	rsteth	Restaking Vault ETH	4339.51	null	895.45
+chia	xch	Chia	8.17	-8.53294	6536479
+metal-blockchain	metal	Metal Blockchain	0.235146	-5.57473	1134429
+zetachain	zeta	ZetaChain	0.106261	-3.85755	10917479
+rollbit-coin	rlb	Rollbit Coin	0.064166	-0.92813	305077
+blur	blur	Blur	0.04571579	-4.23086	15170038
+melania-meme	melania	Melania Meme	0.140503	-33.33338	60931225
+ozone-chain	ozo	Ozone Chain	0.130766	-0.09916	230445
+bitkub-coin	kub	KUB Coin	1.31	-0.61788	299214
+tdccp	tdccp	TDCCP	0.181153	-5.95646	109319
+gaib-ai-dollar-alpha-usdc	aidausdc	Gaib AI Dollar Alpha USDC	1.001	-0.27581	63237
+unibase	ub	Unibase	0.04582657	-4.74171	27642090
+peanut-the-squirrel	pnut	Peanut the Squirrel	0.113522	-7.91914	24115187
+ore	ore	Ore	280.32	-14.82294	33031167
+compound-ether	ceth	cETH	69.05	-3.9543	1.39
+vethor-token	vtho	VeThor	0.00117947	-0.76835	4990893
+anzen-usdz	usdz	Anzen USDz	0.984387	-0.44947	65291
+verge	xvg	Verge	0.00685009	-9.06704	10864975
+siacoin	sc	Siacoin	0.00199718	-1.67954	5273056
+avalanche-bridged-weth-avalanche	weth	Avalanche Bridged WETH (Avalanche)	3446.18	-3.1739	34762900
+holotoken	hot	Holo	0.00062446	-6.75185	6923939
+verus-coin	vrsc	Verus	1.4	3.21953	23893
+usda-3	usda	USDA	0.999045	0.06112	38919004
+frax-usd	frxusd	Frax USD	0.999902	-0.01744	2584559
 moonwell-flagship-eth-morpho-vault	mweth	Moonwell Flagship ETH (Morpho Vault)	3667.24	null	125.17
-vvs-finance	vvs	VVS Finance	0.00000257	-4.0929	784729
-quantum-resistant-ledger	qrl	Quantum Resistant Ledger	1.39	-1.32318	110818
-iotex	iotx	IoTeX	0.01141311	-5.90594	34584285
-coti	coti	COTI	0.04354329	-12.94172	51337657
-euler	eul	Euler	5.74	-7.02282	8885256
-ostrich	rich	Ostrich	3.05	-0.31954	14564.34
-gems-vip	gems	Gems VIP	0.166221	-5.44243	892834
-renzo-restaked-lst	pzeth	Renzo Restaked LST	4190.32	-3.66415	841.82
-ordinals	ordi	ORDI	5.02	-4.05926	41792907
-verus-coin	vrsc	Verus	1.32	-2.2294	22752
-aelf	elf	aelf	0.130515	4.51609	4345092
-onyc	onyc	Onchain Yield Coin	1.046	-0.00898	1161608
+zignaly	zig	ZIGChain	0.078019	-5.26449	2884381
+succinct	prove	Succinct	0.560763	-5.39853	21728103
+alchemist-ai	alch	Alchemist AI	0.128462	2.84467	45053006
+cow-protocol	cow	CoW Protocol	0.208631	-2.72152	21465296
+vvs-finance	vvs	VVS Finance	0.00000254	-5.17675	817964
+quantum-resistant-ledger	qrl	Quantum Resistant Ledger	1.38	-1.46946	112492
+allora	allo	Allora	0.529526	-58.44728	232450142
+euler	eul	Euler	5.71	-7.53882	8876730
+iotex	iotx	IoTeX	0.01124167	-11.12545	31546342
+gems-vip	gems	Gems VIP	0.164776	-6.07747	980359
+ostrich	rich	Ostrich	3	-1.81858	14864.86
+renzo-restaked-lst	pzeth	Renzo Restaked LST	4200.91	-0.95216	843.95
+coti	coti	COTI	0.04261149	-17.75481	46236486
+onyc	onyc	Onchain Yield Coin	1.046	0.11881	1120407
+apex-token-2	apex	APEX	0.80992	1.10424	4794843
+aelf	elf	aelf	0.130007	3.90164	4341548
+ordinals	ordi	ORDI	4.95	-4.98973	41334529
 midas-mhyper	mhyper	Midas mHYPER	1.051	0	125705
-skale	skl	SKALE	0.01707062	-8.64914	17738836
-mantra-dao	om	MANTRA	0.093045	-6.51173	29116569
-apex-token-2	apex	APEX	0.800244	-0.07588	4369747
-frax-share	frax	Frax (prev. FXS)	1.15	-3.85013	12375955
-momentum-3	mmt	Momentum	0.496846	-6.0831	187608323
-gmx	gmx	GMX	9.81	-2.20084	12917872
-casper-network	cspr	Casper Network	0.00743924	-6.17652	2104226
-ankr	ankr	Ankr Network	0.01009619	2.19343	68143078
-chutes	sn64	Chutes	29.52	-4.39374	2479174
+skale	skl	SKALE	0.01684514	-8.9246	16453962
+mantra-dao	om	MANTRA	0.091613	-8.34395	29911900
+frax-share	frax	Frax (prev. FXS)	1.13	-5.70408	12275158
+casper-network	cspr	Casper Network	0.00742905	-5.1528	2106596
 tradable-singapore-fintech-ssl-2	pc0000023	Tradable Singapore Fintech SSL	1	0	0
-ring-usd	usdr	Ring USD	1	-0.07389	22373
-qusdt	qusdt	QL1 Bridged USDT (QL1)	0.999754	0.00375	75.07
-hashkey-ecopoints	hsk	HashKey Platform Token	0.32295	0.85909	1127934
-unit-plasma	uxpl	Unit Plasma	0.276506	-14.34765	16544117
-syndicate-3	synd	Syndicate	0.207839	-14.05542	20546700
-savings-xdai	sdai	Savings xDAI	1.21	0.56773	8052363
-lcx	lcx	LCX	0.104766	-0.97486	598191
-mashida	mshd	Mashida	0.00983944	-2.5972	14025.07
-peaq-2	peaq	peaq	0.068262	-5.82014	3913799
-debridge	dbr	deBridge	0.02384378	-3.30093	8135029
-centrifuge-2	cfg	Centrifuge	0.172938	-6.36383	3203112
+ring-usd	usdr	Ring USD	0.999775	-0.13159	21659
+gmx	gmx	GMX	9.68	-3.76797	12822422
+qusdt	qusdt	QL1 Bridged USDT (QL1)	0.999631	-0.00821	75.06
+hashkey-ecopoints	hsk	HashKey Platform Token	0.323062	1.84806	734871
+chutes	sn64	Chutes	29.13	-5.94138	2470582
+ankr	ankr	Ankr Network	0.00990915	-0.23282	82205695
+savings-xdai	sdai	Savings xDAI	1.21	0.25663	8162970
+momentum-3	mmt	Momentum	0.483594	-8.07377	190922832
+syndicate-3	synd	Syndicate	0.206491	-19.41598	20589354
+omni-network	omni	Omni Network [Old]	2	-5.63112	155476
+mashida	mshd	Mashida	0.00986316	-2.56569	17452.92
+unit-plasma	uxpl	Unit Plasma	0.272786	-14.99301	16544531
+lcx	lcx	LCX	0.103934	-2.50928	585351
 dfdv-staked-sol	dfdvsol	DFDV Staked SOL	175.1	null	722.87
-omni-network	omni	Omni Network [Old]	1.98	-6.20246	240681
-vicicoin	vcnt	ViciCoin	17.12	-0.71685	195956
+centrifuge-2	cfg	Centrifuge	0.17201	-6.76613	2955315
+vicicoin	vcnt	ViciCoin	17.1	-0.96125	197455
 vaneck-treasury-fund	vbill	VanEck Treasury Fund	1	0	0
-request-network	req	Request	0.130099	-1.71432	2018449
-polymesh	polyx	Polymesh	0.07941	-0.30343	7637262
-resolv-rlp	rlp	Resolv Liquidity Provider Token	1.26	0.00101	352420
-sushi	sushi	Sushi	0.496218	-3.17197	141592397
-edu-coin	edu	Open Campus	0.158711	-3.87734	8439769
+peaq-2	peaq	peaq	0.067373	-7.7241	3749431
+debridge	dbr	deBridge	0.02355921	-5.06864	8162816
+resolv-rlp	rlp	Resolv Liquidity Provider Token	1.26	0.00107	349031
+request-network	req	Request	0.127684	-3.5131	2114262
+polymesh	polyx	Polymesh	0.077631	-2.50875	7677058
+sushi	sushi	Sushi	0.487766	-4.75239	141840200
+vaultbridge-bridged-wbtc-katana	vbwbtc	VaultBridge Bridged WBTC (Katana)	102786	-2.90299	3324784

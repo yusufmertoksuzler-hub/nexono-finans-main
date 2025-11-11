@@ -950,7 +950,7 @@
       "lastTradeDate": 1762354800
     },
     "count": 44,
-    "updatedAt": "2025-11-11T20:26:04.520Z"
+    "updatedAt": "2025-11-11T20:42:21.095Z"
   },
   "1d": {
     "interval": "1h",
@@ -1903,7 +1903,7 @@
       "lastTradeDate": 1762354800
     },
     "count": 44,
-    "updatedAt": "2025-11-11T20:26:04.903Z"
+    "updatedAt": "2025-11-11T20:42:21.508Z"
   },
   "1mo": {
     "interval": "1d",
@@ -2394,7 +2394,7 @@
       "lastTradeDate": null
     },
     "count": 22,
-    "updatedAt": "2025-11-11T20:26:05.356Z"
+    "updatedAt": "2025-11-11T20:42:21.946Z"
   },
   "3mo": {
     "interval": "1d",
@@ -3830,7 +3830,7 @@
       "lastTradeDate": null
     },
     "count": 67,
-    "updatedAt": "2025-11-11T20:26:05.829Z"
+    "updatedAt": "2025-11-11T20:42:22.439Z"
   },
   "1y": {
     "interval": "1d",
@@ -9172,6 +9172,6 @@
       "lastTradeDate": null
     },
     "count": 253,
-    "updatedAt": "2025-11-11T20:26:06.300Z"
+    "updatedAt": "2025-11-11T20:42:22.918Z"
   }
 }
