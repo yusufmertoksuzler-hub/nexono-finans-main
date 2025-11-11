@@ -9,7 +9,10 @@
     "build:dev": "vite build --mode development",
     "lint": "eslint .",
     "preview": "vite preview",
-    "server": "node server/index.js"
+    "server": "node server/index.js",
+    "prestart": "npm run build",
+    "start": "node server/index.js",
+    "tunnel": "npx localtunnel --port 3001"
   },
   "dependencies": {
     "@capacitor/android": "^7.4.3",
@@ -74,7 +77,8 @@
     "tailwindcss-animate": "^1.0.7",
     "vaul": "^0.9.3",
     "yahoo-finance2": "^2.13.3",
-    "zod": "^3.23.8"
+    "zod": "^3.23.8",
+    "localtunnel": "^2.0.2"
   },
   "devDependencies": {
     "@eslint/js": "^9.9.0",

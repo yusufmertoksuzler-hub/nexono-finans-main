@@ -1,0 +1,9 @@
+node_modules
+.git
+.railway
+dist
+*.log
+*.rar
+*.zip
+.DS_Store
+
