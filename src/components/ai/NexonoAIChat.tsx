@@ -338,12 +338,15 @@ ${portfolioContext}`;
 
   const sendToModel = async (text: string, conversationHistory: MessageItem[] = [], retryCount = 0, useBackupKey = false): Promise<string> => {
     const payload = buildPayload(text, conversationHistory);
-    // Google Gemini API - yedek key desteği
-    const primaryKey = ((import.meta as any).env?.VITE_GEMINI_API_KEY || 'AIzaSyCApXsc2OcJ9O6HyjdE9JTZ3dT23FpNuYg').trim();
-    const backupKey = 'AIzaSyCApXsc2OcJ9O6HyjdE9JTZ3dT23FpNuYg';
+    // Google Gemini API - direkt kullanım
+    const primaryKey = ((import.meta as any).env?.VITE_GEMINI_API_KEY || 'AIzaSyCsciY492F7LrPg3GvDsRF6-XLR0YbrXvU').trim();
+    const backupKey = 'AIzaSyCsciY492F7LrPg3GvDsRF6-XLR0YbrXvU';
     const apiKey = useBackupKey ? backupKey : primaryKey;
     const maxRetries = 2;
     const retryDelay = Math.min(2000 * (retryCount + 1), 5000);
+
+    // Gemini 2.0 Flash modeli
+    const model = 'gemini-2.0-flash';
 
     if (!apiKey) {
       throw new Error('Google Gemini API Key eksik. Lütfen .env.local içine VITE_GEMINI_API_KEY ekleyin.');
@@ -385,7 +388,7 @@ ${portfolioContext}`;
         }
       }
 
-      const res = await fetch(`https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash-exp:generateContent?key=${apiKey}`, {
+      const res = await fetch(`https://generativelanguage.googleapis.com/v1beta/models/${model}:generateContent?key=${apiKey}`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json'
