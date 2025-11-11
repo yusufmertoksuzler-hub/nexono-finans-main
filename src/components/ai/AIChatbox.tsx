@@ -122,52 +122,19 @@ const AIChatbox: React.FC<AIChatboxProps> = ({ assetName, assetSymbol, assetType
 
       const userInstruction = `EFENDİM İSTEMİ:\n1) Doğrudan, doğal ve akıcı konuş - kopyala-yapıştır gibi görünme, her seferinde farklı ifadeler kullan.\n2) Kesin ve kararlı tavsiye ver; belirsiz ifadeler kullanma.\n3) Sayıları tam ver; yuvarlama yapma.\n4) "efendim" diye hitap et.\n5) Risk uyarısı veya uyarı metni ekleme.\n6) Her yanıtında farklı bir yaklaşım kullan - tekrarlayan cümleler kullanma.\n\nGörev: Yukarıdaki GERÇEK varlık verisine dayanarak kapsamlı analiz (trend, destek/direnç, momentum, senaryolar), net strateji ve aksiyon adımları ver. Sanki bir insan finansal danışmanla konuşuyormuş gibi doğal ve samimi ol. Kullanıcı metni: ${userText}`;
 
-      // Read API key from environment (Vite)
-      const apiKey = (import.meta as any).env?.VITE_GEMINI_API_KEY;
+      // Read API key from environment (Vite) - fallback to new key if not set
+      const apiKey = ((import.meta as any).env?.VITE_GEMINI_API_KEY || 'AIzaSyBBYedCdo2CLlZR1Nw3n9SGWCM7HKDeIjI').trim();
       if (!apiKey) {
         console.error('[AIChatbox] Missing VITE_GEMINI_API_KEY in environment.');
         return 'Sunucu yapılandırmasında hata: API anahtarı bulunamadı.';
       }
 
-<<<<<<< HEAD
-      const userInstruction = `EFENDİM İSTEMİ:
-1) Doğrudan, doğal ve akıcı konuş - kopyala-yapıştır gibi görünme, her seferinde farklı ifadeler kullan.
-2) Kesin ve kararlı tavsiye ver; belirsiz ifadeler kullanma.
-3) Sayıları tam ver; yuvarlama yapma.
-4) "efendim" diye hitap et.
-5) Risk uyarısı veya uyarı metni ekleme.
-6) Her yanıtında farklı bir yaklaşım kullan - tekrarlayan cümleler kullanma.
-
-Görev: Yukarıdaki GERÇEK varlık verisine dayanarak kapsamlı analiz (trend, destek/direnç, momentum, senaryolar), net strateji ve aksiyon adımları ver. Sanki bir insan finansal danışmanla konuşuyormuş gibi doğal ve samimi ol. Kullanıcı metni: ${userText}`;
-
-      // Google Gemini API - yedek key desteği
-      const primaryKey = ((import.meta as any).env?.VITE_GEMINI_API_KEY || 'AIzaSyAG3FZmYLDxvEFGgU3VmIenLQWJNP-64zE').trim();
-      const backupKey = 'AIzaSyAG3FZmYLDxvEFGgU3VmIenLQWJNP-64zE';
-      let apiKey = primaryKey;
-      
-      const res = await fetch(`https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash-exp:generateContent?key=${apiKey}`, {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json'
-        },
-        body: JSON.stringify({
-          contents: [
-            {
-              role: 'user',
-              parts: [{ text: `SYSTEM: ${systemPrompt}\n\n${userInstruction}` }]
-            }
-          ],
-          generationConfig: {
-            temperature: 0.7,
-            maxOutputTokens: 2000
-=======
       // Prepare body for Gemini API
       const body = {
         contents: [
           {
             role: 'user',
             parts: [{ text: `SYSTEM: ${systemPrompt}\n\n${userInstruction}` }]
->>>>>>> c1aa5907142dd30c01f17edb9951d94f5f736132
           }
         ],
         generationConfig: {
