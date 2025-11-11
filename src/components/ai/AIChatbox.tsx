@@ -5,6 +5,15 @@ import { Input } from '@/components/ui/input';
 import { Card } from '@/components/ui/card';
 import { motion, AnimatePresence } from 'framer-motion';
 
+/**
+ * AIChatbox.tsx
+ * - Gemini API key MUST be provided via environment variable: VITE_GEMINI_API_KEY
+ * - Do NOT commit .env with your real key to source control.
+ *
+ * Example .env (local, not committed):
+ * VITE_GEMINI_API_KEY=your_real_gemini_key_here
+ */
+
 interface Message {
   id: string;
   type: 'user' | 'ai';
@@ -20,6 +29,16 @@ interface AIChatboxProps {
   chartData?: { timestamp: number; price: number }[];
   timeframe?: string;
 }
+
+const formatCurrency = (value?: number, type: 'crypto' | 'stock' = 'crypto') => {
+  if (value === undefined || value === null || Number.isNaN(value)) return '-';
+  if (type === 'crypto') return `$${value.toLocaleString('en-US', { minimumFractionDigits: 2, maximumFractionDigits: 2 })}`;
+  return `₺${value.toLocaleString('tr-TR', { minimumFractionDigits: 2, maximumFractionDigits: 2 })}`;
+};
+
+const safeGet = (obj: any, path: string[], fallback?: any) => {
+  return path.reduce((acc, k) => (acc && acc[k] !== undefined ? acc[k] : undefined), obj) ?? fallback;
+};
 
 const AIChatbox: React.FC<AIChatboxProps> = ({ assetName, assetSymbol, assetType, assetData, chartData = [], timeframe = '1D' }) => {
   const [messages, setMessages] = useState<Message[]>([]);
@@ -47,18 +66,19 @@ const AIChatbox: React.FC<AIChatboxProps> = ({ assetName, assetSymbol, assetType
 
   const generateAIResponse = async (userText: string) => {
     try {
-      const latestPrice = chartData.length > 0 ? chartData[chartData.length - 1].price : (assetData?.current_price || assetData?.price);
+      // Build contextual asset info
+      const latestPrice = chartData.length > 0 ? chartData[chartData.length - 1].price : safeGet(assetData, ['current_price']) ?? safeGet(assetData, ['price']);
       const firstPrice = chartData.length > 0 ? chartData[0].price : undefined;
-      const changeAbs = latestPrice !== undefined && firstPrice !== undefined ? latestPrice - firstPrice : (assetData?.price_change_24h || assetData?.change);
+      const changeAbs = (latestPrice !== undefined && firstPrice !== undefined) ? latestPrice - firstPrice : safeGet(assetData, ['price_change_24h']) ?? safeGet(assetData, ['change']);
       const changePct = (() => {
         if (latestPrice !== undefined && firstPrice !== undefined && firstPrice !== 0) {
           return ((latestPrice - firstPrice) / firstPrice) * 100;
         }
-        return assetData?.price_change_percentage_24h ?? assetData?.changePercent;
+        return safeGet(assetData, ['price_change_percentage_24h']) ?? safeGet(assetData, ['changePercent']);
       })();
 
-      const volume = assetType === 'crypto' ? (assetData?.total_volume) : (assetData?.volumeTL || assetData?.volume);
-      const marketCap = assetData?.market_cap;
+      const volume = assetType === 'crypto' ? safeGet(assetData, ['total_volume']) : safeGet(assetData, ['volumeTL']) ?? safeGet(assetData, ['volume']);
+      const marketCap = safeGet(assetData, ['market_cap']);
       const desc = assetData?.description ? String(assetData.description).split('.').slice(0, 2).join('. ') : '';
 
       const contextParts: string[] = [];
@@ -67,57 +87,49 @@ const AIChatbox: React.FC<AIChatboxProps> = ({ assetName, assetSymbol, assetType
       contextParts.push(`Sembol: ${assetSymbol?.toUpperCase()}`);
       contextParts.push(`Tür: ${assetType === 'crypto' ? 'Kripto Para' : 'Hisse Senedi'}`);
       contextParts.push('');
-      
+
       if (latestPrice !== undefined) {
-        const priceStr = assetType === 'crypto' 
-          ? `$${latestPrice.toLocaleString('en-US', {minimumFractionDigits: 2, maximumFractionDigits: 2})}`
-          : `₺${latestPrice.toLocaleString('tr-TR', {minimumFractionDigits: 2, maximumFractionDigits: 2})}`;
-        contextParts.push(`Güncel Fiyat: ${priceStr}`);
+        contextParts.push(`Güncel Fiyat: ${formatCurrency(latestPrice, assetType)}`);
       }
-      
+
       if (typeof changePct === 'number') {
         contextParts.push(`24s Değişim: ${changePct >= 0 ? '+' : ''}${changePct.toFixed(2)}%`);
       }
-      
+
       if (volume !== undefined) {
-        const volStr = assetType === 'crypto'
-          ? `$${(volume / 1e9).toFixed(2)}B`
-          : `₺${(volume / 1e6).toFixed(1)}M`;
+        const volStr = assetType === 'crypto' ? `$${(volume / 1e9).toFixed(2)}B` : `₺${(volume / 1e6).toFixed(1)}M`;
         contextParts.push(`24s Hacim: ${volStr}`);
       }
-      
+
       if (marketCap !== undefined) {
-        const mcStr = assetType === 'crypto'
-          ? `$${(marketCap / 1e9).toFixed(2)}B`
-          : `₺${(marketCap / 1e9).toFixed(2)}B`;
+        const mcStr = assetType === 'crypto' ? `$${(marketCap / 1e9).toFixed(2)}B` : `₺${(marketCap / 1e9).toFixed(2)}B`;
         contextParts.push(`Piyasa Değeri: ${mcStr}`);
       }
-      
+
       if (assetData?.high_24h || assetData?.yuksek) {
         const high = assetData.high_24h || assetData.yuksek;
-        contextParts.push(`24s En Yüksek: ${assetType === 'crypto' ? '$' : '₺'}${high.toFixed(2)}`);
+        contextParts.push(`24s En Yüksek: ${assetType === 'crypto' ? '$' : '₺'}${Number(high).toFixed(2)}`);
       }
-      
+
       if (assetData?.low_24h || assetData?.dusuk) {
         const low = assetData.low_24h || assetData.dusuk;
-        contextParts.push(`24s En Düşük: ${assetType === 'crypto' ? '$' : '₺'}${low.toFixed(2)}`);
+        contextParts.push(`24s En Düşük: ${assetType === 'crypto' ? '$' : '₺'}${Number(low).toFixed(2)}`);
       }
-      
+
       const context = contextParts.join('\n');
 
-      const systemPrompt = `Sen NEXONO AI - profesyonel finansal danışman. Kullanıcıya "efendim" diye hitap et. 
+      const systemPrompt = `Sen NEXONO AI - profesyonel finansal danışman. Kullanıcıya "efendim" diye hitap et. \n\nKONUŞMA TARZI:\n- DOĞAL VE SAMİMİ KONUŞ: Kopyala-yapıştır gibi yapay ve tekrarlayan cümleler kullanma. Her yanıtında farklı ifadeler kullan.\n- AKICI VE SPONTANE OL: Sanki bir arkadaşınla konuşuyormuş gibi doğal akışta ilerle. Formülsel veya şablon gibi görünme.\n- ÇEŞİTLİ İFADELER KULLAN: Aynı kelimeleri tekrar tekrar kullanma. Her seferinde farklı şekillerde anlat.\n- PROFESYONEL AMA İÇTEN: Profesyonel kal ama soğuk ve robot gibi görünme. İnsan gibi düşünüp konuş.\n- BELİRSİZ İFADELER KULLANMA: Kararlı ve net tavsiye ver. "Olabilir" yerine "olacaktır" kullan.\n- DOĞRUDAN VE AKICI: Uyarı veya risk metni ekleme. Doğrudan analiz yap.\n\nGERÇEK VARLIK VERİLERİ:\n${context}`;
 
-KONUŞMA TARZI:
-- DOĞAL VE SAMİMİ KONUŞ: Kopyala-yapıştır gibi yapay ve tekrarlayan cümleler kullanma. Her yanıtında farklı ifadeler kullan.
-- AKICI VE SPONTANE OL: Sanki bir arkadaşınla konuşuyormuş gibi doğal akışta ilerle. Formülsel veya şablon gibi görünme.
-- ÇEŞİTLİ İFADELER KULLAN: Aynı kelimeleri tekrar tekrar kullanma. Her seferinde farklı şekillerde anlat.
-- PROFESYONEL AMA İÇTEN: Profesyonel kal ama soğuk ve robot gibi görünme. İnsan gibi düşünüp konuş.
-- BELİRSİZ İFADELER KULLANMA: Kararlı ve net tavsiye ver. "Olabilir" yerine "olacaktır" kullan.
-- DOĞRUDAN VE AKICI: Uyarı veya risk metni ekleme. Doğrudan analiz yap.
+      const userInstruction = `EFENDİM İSTEMİ:\n1) Doğrudan, doğal ve akıcı konuş - kopyala-yapıştır gibi görünme, her seferinde farklı ifadeler kullan.\n2) Kesin ve kararlı tavsiye ver; belirsiz ifadeler kullanma.\n3) Sayıları tam ver; yuvarlama yapma.\n4) "efendim" diye hitap et.\n5) Risk uyarısı veya uyarı metni ekleme.\n6) Her yanıtında farklı bir yaklaşım kullan - tekrarlayan cümleler kullanma.\n\nGörev: Yukarıdaki GERÇEK varlık verisine dayanarak kapsamlı analiz (trend, destek/direnç, momentum, senaryolar), net strateji ve aksiyon adımları ver. Sanki bir insan finansal danışmanla konuşuyormuş gibi doğal ve samimi ol. Kullanıcı metni: ${userText}`;
 
-GERÇEK VARLIK VERİLERİ:
-${context}`;
+      // Read API key from environment (Vite)
+      const apiKey = (import.meta as any).env?.VITE_GEMINI_API_KEY;
+      if (!apiKey) {
+        console.error('[AIChatbox] Missing VITE_GEMINI_API_KEY in environment.');
+        return 'Sunucu yapılandırmasında hata: API anahtarı bulunamadı.';
+      }
 
+<<<<<<< HEAD
       const userInstruction = `EFENDİM İSTEMİ:
 1) Doğrudan, doğal ve akıcı konuş - kopyala-yapıştır gibi görünme, her seferinde farklı ifadeler kullan.
 2) Kesin ve kararlı tavsiye ver; belirsiz ifadeler kullanma.
@@ -148,49 +160,41 @@ Görev: Yukarıdaki GERÇEK varlık verisine dayanarak kapsamlı analiz (trend, 
           generationConfig: {
             temperature: 0.7,
             maxOutputTokens: 2000
+=======
+      // Prepare body for Gemini API
+      const body = {
+        contents: [
+          {
+            role: 'user',
+            parts: [{ text: `SYSTEM: ${systemPrompt}\n\n${userInstruction}` }]
+>>>>>>> c1aa5907142dd30c01f17edb9951d94f5f736132
           }
-        })
+        ],
+        generationConfig: {
+          temperature: 0.7,
+          maxOutputTokens: 2000
+        }
+      };
+
+      const endpoint = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash-exp:generateContent?key=${apiKey}`;
+
+      const res = await fetch(endpoint, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(body)
       });
 
       if (!res.ok) {
         const errorData = await res.json().catch(() => ({}));
-        // Yedek key'i dene (sadece bir kez)
-        if ((res.status === 401 || res.status === 403) && apiKey === primaryKey) {
-          console.log('[AI] Ana API key başarısız, yedek key deneniyor...');
-          apiKey = backupKey;
-          const retryRes = await fetch(`https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash-exp:generateContent?key=${apiKey}`, {
-            method: 'POST',
-            headers: {
-              'Content-Type': 'application/json'
-            },
-            body: JSON.stringify({
-              contents: [
-                {
-                  role: 'user',
-                  parts: [{ text: `SYSTEM: ${systemPrompt}\n\n${userInstruction}` }]
-                }
-              ],
-              generationConfig: {
-                temperature: 0.7,
-                maxOutputTokens: 2000
-              }
-            })
-          });
-          if (!retryRes.ok) {
-            const retryErrorData = await retryRes.json().catch(() => ({}));
-            throw new Error(`Gemini API request failed: ${retryErrorData.error?.message || retryRes.statusText}`);
-          }
-          const retryData = await retryRes.json();
-          const raw = retryData?.candidates?.[0]?.content?.parts?.[0]?.text || 'Yanıt alınamadı.';
-          const text = typeof raw === 'string' ? raw : JSON.stringify(raw);
-          return text.replace(/\*\*(.*?)\*\*/g, '<b>$1</b>');
-        }
-        throw new Error(`Gemini API request failed: ${errorData.error?.message || res.statusText}`);
+        // Log and return user-friendly message
+        console.error('[AIChatbox] Gemini API error', res.status, errorData);
+        return 'AI yanıtı alınırken sunucudan hata döndü. Lütfen daha sonra tekrar deneyin.';
       }
-      
+
       const data = await res.json();
       const raw = data?.candidates?.[0]?.content?.parts?.[0]?.text || 'Yanıt alınamadı.';
       const text = typeof raw === 'string' ? raw : JSON.stringify(raw);
+      // Replace **bold** markup with <b> for rendering in UI
       return text.replace(/\*\*(.*?)\*\*/g, '<b>$1</b>');
     } catch (error) {
       console.error('AI Generation Error:', error);
@@ -220,13 +224,13 @@ Görev: Yukarıdaki GERÇEK varlık verisine dayanarak kapsamlı analiz (trend, 
         content: aiResponse,
         timestamp: new Date()
       };
-      
+
       setMessages(prev => [...prev, aiMessage]);
     } catch (error) {
       const errorMessage: Message = {
         id: (Date.now() + 1).toString(),
         type: 'ai',
-        content: "I'm sorry, I encountered an error processing your request. Please try again.",
+        content: "Sunucu hatası: isteğiniz işlenemedi.",
         timestamp: new Date()
       };
       setMessages(prev => [...prev, errorMessage]);
@@ -273,8 +277,8 @@ Görev: Yukarıdaki GERÇEK varlık verisine dayanarak kapsamlı analiz (trend, 
                   )}
                 </div>
                 <div className={`rounded-lg px-3 py-2 ${
-                  message.type === 'user' 
-                    ? 'bg-primary text-primary-foreground' 
+                  message.type === 'user'
+                    ? 'bg-primary text-primary-foreground'
                     : 'bg-secondary text-secondary-foreground'
                 }`}>
                   {message.type === 'ai' ? (
@@ -290,7 +294,7 @@ Görev: Yukarıdaki GERÇEK varlık verisine dayanarak kapsamlı analiz (trend, 
             </motion.div>
           ))}
         </AnimatePresence>
-        
+
         {isLoading && (
           <motion.div
             initial={{ opacity: 0 }}
@@ -307,7 +311,7 @@ Görev: Yukarıdaki GERÇEK varlık verisine dayanarak kapsamlı analiz (trend, 
             </div>
           </motion.div>
         )}
-        
+
         <div ref={messagesEndRef} />
       </div>
 
